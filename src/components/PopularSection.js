@@ -1,0 +1,47 @@
+import React from "react";
+import "../App.css"
+import { Container, Row, Col } from "reactstrap";
+import { useHistory } from 'react-router-dom';
+import { Input } from "reactstrap"
+import defimg from "../assets/def_img.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+// const history= useHistory();
+const PopSec = (from) => {
+  console.log(from, 'here')
+
+  const loadList = from.data.filter(x => x.category === from.context.focus)
+  console.log(loadList)
+
+  return (
+    <>     
+    <h5>{from.context.title}</h5>
+      <div style={from.context.title === 'Popular' ? { height: "350px" } : {}} className="hero-bar col-dir">
+        <div className="row-2-grid">
+        {loadList.map(item => {
+          return (
+            <div className="card-promo-row">
+              <div className="promo-box-pop row-dir">
+                <div className="pop-box-card">
+                  <img className="popimg" style={from.context.focus === 'Appetizer' ? { width: "50%" } : {}} src={item.img_url} />
+                  <p className="foodname">{item.name}</p>
+                  <div className="price-row">
+                    <p className="price">RM{item.price}</p>
+                    <FontAwesomeIcon className="addIcon" icon="plus-circle" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+        </div>
+     
+
+      </div>
+    </>
+  )
+
+};
+
+export default PopSec;
