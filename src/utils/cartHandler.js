@@ -45,3 +45,21 @@ export const cartAdd = async (state) => {
     
     
 }
+
+
+export const cartDel = async (arr) => {
+
+    var newar = []
+
+        const toDel = arr.toRem
+        const data = arr.items
+
+        const test = data.map((el) => el.name).indexOf(toDel);
+        for (let g = 0; g < data.length; g++) {
+          if (test !== g) {
+            newar.push(data[g])
+          }
+        }    
+        return newar
+
+}

@@ -25,6 +25,7 @@ const Orders = (data) => {
   
   const [show, setShow] = useState(false)
   const [focus, setFocus] = useState([])
+  const [newArr, setNewArr ] = useState([])
 
   useEffect(() => {
   }, []); 
@@ -32,7 +33,6 @@ const Orders = (data) => {
  
   const items = data.prop
   const menu = data.data
-  const { user } = useAuth0();
 
   // if (location.state.context === 'All Items') {
   //   var dataContext = items
@@ -65,12 +65,16 @@ const Orders = (data) => {
   }
   var gvar1 = []
 
+  console.log(items,sprop,'LOOK HERE')
+
 
   const pusher = (e) => {
     gvar1.push({
       entry:e
     })
   }
+
+
 
   const testset = menu.map(y => {return y.name})
 
@@ -83,13 +87,22 @@ const Orders = (data) => {
 
   }
 
+  var foodItems = items.filter(x => x.category !== 'Drinks')
+  var drinkItems = items.filter(y => y.category === 'Drinks')
+
+  var mFoodItems = foodItems.map(item => {return {comments:item.comms,f_name:item.name,status:'pending','tid':item.tid,iprice:item.price}})
+  var mDrinkItems = drinkItems.map(item => {return {comments:item.comms,f_name:item.name,status:'pending','tid':item.tid,iprice:item.price}})
+
+
+  console.log(mFoodItems,mDrinkItems,'mutated')
+
   return (
 
     <>
        <Hero data={sprop} />
        {items.length < 1 ? <h5 className="notice-sm">Add Items to your order to continue</h5> : ''}
-      <MainOrder data2={sprop} data={items} setFocus={setFocus} setShow={setShow} mqty={gvar1}/>
-      {items.length >= 1 ? <SumCheck data={items}/> : ''}
+      <MainOrder data2={sprop} data={items} setNewCart={data.setCart} setFocus={setFocus} setShow={setShow} mqty={gvar1}/>
+      {items.length >= 1 ? <SumCheck fetchData={{tdata:sprop,fdata:mFoodItems,ddata:mDrinkItems}} data={items}/> : ''}
       {/* <SumCheck data={items}/> */}
 
     </>

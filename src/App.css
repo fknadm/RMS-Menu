@@ -987,6 +987,23 @@ flex-direction: row;
   margin: 10px;
 }
 
+.del-row {
+  display: flex;
+  justify-content: flex-end;
+  background-color: aliceblue;
+  margin-bottom: 10px;
+}
+
+.rem-btn {
+  width: 20%;
+    border: none;
+    padding: 10px;
+    font-size: 12px;
+    background-color: #e36161;
+    color: #ffffff;
+    border-radius: 27px;
+}
+
 
 
 

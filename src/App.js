@@ -21,6 +21,7 @@ import "./App.css";
 import initFontAwesome from "./utils/initFontAwesome";
 import SingleOrder from "./views/SingleOrder";
 import OrdersCart from "./views/OrdersCart"
+import Thanks from "./views/Thanks"
 
 initFontAwesome();
 const App = () => {
@@ -43,10 +44,11 @@ const App = () => {
         <Container id="container" className="">
           <Switch>
           <Route path="/item" render={(prop) => <SingleOrder setCart={setCart} prop={cart} tableData={table} {...prop} />} />
-          <Route path="/cart" render={(prop) => <OrdersCart data ={mainState} tableData={table} prop={cart} {...prop} />} />
+          <Route path="/cart" render={(prop) => <OrdersCart setCart={setCart} data ={mainState} tableData={table} prop={cart} {...prop} />} />
             <Route path="/menu" render={(prop) => <Menu tableData={table} prop={mainState} {...prop} />} />
             <Route path="/home" render={(prop) => <Home tableData={table} prop={mainState} {...prop} />} />
             <Route path="/" exact render={(prop) => <Landing setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
+            <Route path="/thanks" exact render={(prop) => <Thanks setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
           </Switch>
         </Container>
         {hide ? '' : <NavBarInt  data={cart} prop={mainState} />}

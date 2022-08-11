@@ -7,6 +7,7 @@ import Moment from 'react-moment';
 import moment from 'moment';
 import defimg from '../assets/def_img.png'
 import { UncontrolledCollapse, Collapse, Button, CardBody, Card } from 'reactstrap';
+import { cartDel } from "../utils/cartHandler";
 
 const MainOrder = (from) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,12 +47,12 @@ const MainOrder = (from) => {
               <div className="text-mid">
                 <p className="item-title">{item.name}</p>
                 <p className="item-desc">{item.desc}</p>
-                <div className="counter-row">
+                {/* <div className="counter-row">
                   <FontAwesomeIcon className="addIcon" icon="minus-circle" />
                   <p style={{ padding: '10px' }}>0</p>
                   <FontAwesomeIcon className="addIcon" icon="plus-circle" />
 
-                </div>
+                </div> */}
               </div>
 
               <div className="last-col">
@@ -165,6 +166,7 @@ const MainOrder = (from) => {
                   </p>
                   <div className="counter-row">
                     <p>Quantity: {item.qty}</p>
+
                   </div>
                 </div>
   
@@ -173,6 +175,8 @@ const MainOrder = (from) => {
                 </div>
               </div>
             </Link>
+            <div className="del-row"><button className="rem-btn" onClick={() => cartDel({items:from.data,toRem:item.itemName}).then(res => from.setNewCart(res))}> Remove 1 Item</button></div>
+
             {item.qty > 1 ? dataArray.filter(x => x.name === item.itemName).map(y => {
               return(
               <div className="item-container-min force-minheight noborder row-dir">

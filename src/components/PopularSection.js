@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { Input } from "reactstrap"
 import defimg from "../assets/def_img.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink as RouterNavLink, Link } from "react-router-dom";
 
 
 // const history= useHistory();
@@ -21,6 +22,15 @@ const PopSec = (from) => {
         <div className="row-2-grid">
         {loadList.map(item => {
           return (
+            <Link
+            tag={RouterNavLink}
+            to={{
+              pathname: '/item',
+              state: { single: item, global: from.data }
+            }}
+            exact
+            activeClassName="router-picked"
+          >
             <div className="card-promo-row">
               <div className="promo-box-pop row-dir">
                 <div className="pop-box-card">
@@ -33,6 +43,7 @@ const PopSec = (from) => {
                 </div>
               </div>
             </div>
+            </Link>
           )
         })}
         </div>

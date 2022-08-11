@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import newlogo from "../assets/fblog.png"
 import "../App.css"
 import MainOrder from "./MainOrder";
-import exit from "../assets/exit.svg"
+import exit from "../assets/exit.png"
 
 import { useAuth0 } from "@auth0/auth0-react";
 
