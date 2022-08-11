@@ -48,7 +48,7 @@ const App = () => {
             <Route path="/menu" render={(prop) => <Menu tableData={table} prop={mainState} {...prop} />} />
             <Route path="/home" render={(prop) => <Home tableData={table} prop={mainState} {...prop} />} />
             <Route path="/" exact render={(prop) => <Landing setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
-            <Route path="/thanks" exact render={(prop) => <Thanks setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
+            <Route path="/thanks" exact render={(prop) => <Thanks data ={mainState} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
           </Switch>
         </Container>
         {hide ? '' : <NavBarInt  data={cart} prop={mainState} />}

@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { Input } from "reactstrap"
 import { NavLink as RouterNavLink, Link } from "react-router-dom";
 import defimg from "../assets/def_img.png"
-import dspag from "../assets/3dspag.webp"
+import dspag from "../assets/3dspag.png"
 import drink from "../assets/drink.jpg"
-import appe from "../assets/appe.webp"
+import appe from "../assets/appe.png"
 
 import {
   Collapse,

@@ -23,6 +23,7 @@ const PopSec = (from) => {
         {loadList.map(item => {
           return (
             <Link
+            style={{    width: '50%'}}
             tag={RouterNavLink}
             to={{
               pathname: '/item',

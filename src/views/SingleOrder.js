@@ -72,12 +72,12 @@ const SingleOrder = (from) => {
         </div>
         <div className="sec-col-single row-dir">
           <p className="solo-title">{data.name}</p>
-          <div className="counter-row">
+          {/* <div className="counter-row">
             <FontAwesomeIcon className="addIcon" icon="minus-circle" />
             <p style={{padding:'10px'}}>0</p>
             <FontAwesomeIcon className="addIcon" icon="plus-circle" />
 
-          </div>
+          </div> */}
         </div>
         <div className="desc-row">
           <p>{data.desc}</p>

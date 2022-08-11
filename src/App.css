@@ -542,6 +542,9 @@ body {
 
 .bg-land {
   opacity: 1;
+  display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .landing-logo {
@@ -923,6 +926,10 @@ a {
 
 }
 
+.force-bottom-n {
+  background-color: #ffffff;
+}
+
 .staggered-flex {
   width: 100%;
 }
@@ -976,7 +983,7 @@ flex-direction: row;
 }
 
 .card-promo-row {
-  width: 50%;
+  width: 100%;
 }
 
 .pop-box-card {
@@ -1002,6 +1009,18 @@ flex-direction: row;
     background-color: #e36161;
     color: #ffffff;
     border-radius: 27px;
+}
+
+.item-list {
+  overflow-y: scroll;
+}
+
+.landing-inst,.landing-title,.landing-table {
+  text-align: center;
+}
+
+.landing-table {
+  margin-top: 15px;
 }
 
 

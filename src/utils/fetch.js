@@ -51,7 +51,7 @@ export const sendNewOrder = (data) => {
     const order = {
         drink:data.ddata,
         food:data.fdata,
-        orderId:moment().format('hMs'),
+        orderId:moment().format('hMs')+data.tdata.table,
         status:'pending',
         submitted:moment().format('DD/MM/YYYY'),
         submitted_t:moment().format('HH:mm'),

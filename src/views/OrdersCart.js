@@ -102,7 +102,7 @@ const Orders = (data) => {
        <Hero data={sprop} />
        {items.length < 1 ? <h5 className="notice-sm">Add Items to your order to continue</h5> : ''}
       <MainOrder data2={sprop} data={items} setNewCart={data.setCart} setFocus={setFocus} setShow={setShow} mqty={gvar1}/>
-      {items.length >= 1 ? <SumCheck fetchData={{tdata:sprop,fdata:mFoodItems,ddata:mDrinkItems}} data={items}/> : ''}
+      {items.length >= 1 ? <SumCheck view={'cart'} fetchData={{tdata:sprop,fdata:mFoodItems,ddata:mDrinkItems}} data={items}/> : ''}
       {/* <SumCheck data={items}/> */}
 
     </>

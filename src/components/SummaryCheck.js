@@ -30,7 +30,8 @@ const SumCheck = (from) => {
   }
 
   return (
-    <div className="hero-header force-bottom">
+<>
+    {from.view === 'cart' ?  <div className="hero-header force-bottom">
       <div className="staggered-flex">
         <div className="row-dir between"><p className="tbal">Total: </p><p style={{fontSize:"25px",color:"#E3B100"}} className="tbal">RM{calcTax(bTax, taxSet).total}</p></div>
         <div className="row-dir between"><p className="btax">Before Tax: </p><p className="btax">RM{bTax.toFixed(2)}</p></div>
@@ -39,7 +40,18 @@ const SumCheck = (from) => {
 
     </div>
 
-  </div >
+  </div > :
+    <div className="hero-header force-bottom-n">
+    <div className="staggered-flex">
+      <div className="row-dir between"><p className="tbal">Total: </p><p style={{fontSize:"25px",color:"#E3B100"}} className="tbal">RM{calcTax(bTax, taxSet).total}</p></div>
+      <div className="row-dir between"><p className="btax">Before Tax: </p><p className="btax">RM{bTax.toFixed(2)}</p></div>
+    <div className="row-dir between"><p className="tval">Tax & Service Charge </p><p className="tval">RM{calcTax(bTax, taxSet).tvalue}</p></div>
+  </div>
+
+</div >
+  }
+   
+  </>
 )};
 
 export default SumCheck;
