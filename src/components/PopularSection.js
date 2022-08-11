@@ -12,12 +12,12 @@ import { NavLink as RouterNavLink, Link } from "react-router-dom";
 const PopSec = (from) => {
   console.log(from, 'here')
 
-  const loadList = from.data.filter(x => x.category === from.context.focus)
+  const loadList = from.data.filter(x => x.category === from.context.focus).slice(0,2)
   console.log(loadList)
 
   return (
     <>     
-    <h5>{from.context.title}</h5>
+    <h5 style={{paddingLeft:'20px'}}>{from.context.title}</h5>
       <div style={from.context.title === 'Popular' ? { height: "350px" } : {}} className="hero-bar col-dir">
         <div className="row-2-grid">
         {loadList.map(item => {

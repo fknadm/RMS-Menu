@@ -685,7 +685,7 @@ body {
 }
 
 .foodname {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .popimg {
@@ -1021,6 +1021,10 @@ flex-direction: row;
 
 .landing-table {
   margin-top: 15px;
+}
+
+.order-button {
+  width: 100%;
 }
 
 
