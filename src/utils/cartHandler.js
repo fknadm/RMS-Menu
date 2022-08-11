@@ -1,3 +1,6 @@
+import Moment from 'react-moment';
+import moment from 'moment';
+
 export const cartAdd = async (state) => {
 
     const exist = state.currentCart
@@ -20,14 +23,14 @@ export const cartAdd = async (state) => {
     if (exist.length > 0) {
         for (let i =0; i < exist.length; i++) {
             if (exist[i].id === targetId) {
-                const fresh = {...newOrder,'tid':targetId+increment,comms:comm}
+                const fresh = {...newOrder,'tid':moment().unix(),comms:comm}
                 const newArray = exist.concat(fresh)
                 
                 return newArray
 
             }
             else if (exist[i].id !== targetId) {
-                const fresh = {...newOrder,'tid':targetId,comms:comm}
+                const fresh = {...newOrder,'tid':moment().unix(),comms:comm}
                 const newerArray = exist.concat(fresh)
                 
                 return newerArray
@@ -38,7 +41,7 @@ export const cartAdd = async (state) => {
 
     if (exist. length < 1) {
         console.log('neg route')
-        const newer = [{...newOrder,'tid':newOrder.id,comms:comm}]
+        const newer = [{...newOrder,'tid':moment().unix(),comms:comm}]
         return newer
     }
 
