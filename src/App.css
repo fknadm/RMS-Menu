@@ -833,7 +833,7 @@ a {
   /* margin-top: 300px; */
   top: 50%;
   overflow: auto;
-  height: 90%;
+  height: 100%;
 }
 
 .sec-col-single {
