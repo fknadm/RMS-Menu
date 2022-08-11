@@ -47,7 +47,8 @@ export const sendNewOrder = (data) => {
     else {
         var dsum = 0
     }
-    
+    var totalData = parseInt(fsum)+parseInt(dsum)
+
     const order = {
         drink:data.ddata,
         food:data.fdata,
@@ -56,7 +57,7 @@ export const sendNewOrder = (data) => {
         submitted:moment().format('DD/MM/YYYY'),
         submitted_t:moment().format('HH:mm'),
         table_no:data.tdata.table,
-        tprice: parseInt(fsum)+parseInt(dsum),
+        tprice: totalData,
         txid:moment().format('hMs'),
         end:''
     }
