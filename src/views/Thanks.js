@@ -86,8 +86,8 @@ const Thanks = (data) => {
         <h4 className="landing-table">Table: {data.tableData}</h4>
 
         <div>
-        <MainOrder data2={sprop} data={items} mqty={gvar1}/>
-        <SumCheck view={'thanks'} data={items}/>
+        <MainOrder data2={sprop} data={data.cart} mqty={gvar1}/>
+        <SumCheck view={'thanks'} data={data.cart}/>
         </div>
 
       </div>
