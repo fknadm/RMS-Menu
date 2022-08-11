@@ -40,6 +40,7 @@ const MainOrder = (from) => {
             activeClassName="router-picked"
           >
             <div className="item-container row-dir">
+              <div className="group-left">
               <div className="item-img-container">
                 <img className="item-img" src={item.img_url} />
               </div>
@@ -54,6 +55,8 @@ const MainOrder = (from) => {
 
                 </div> */}
               </div>
+              </div>
+            
 
               <div className="last-col">
                 {item.chefrec ? <FontAwesomeIcon className="star" icon="star" /> : <p></p>}
@@ -372,9 +375,7 @@ const MainOrder = (from) => {
               activeClassName="router-picked"
             >
               <div style={{  borderBottom:"1px solid #424242" }} className="item-container-min force-minheight noborder row-dir">
-                <div className="item-img-container col2">
-                  <img className="item-img" src={item.data.img_url} />
-                </div>
+
   
                 <div className="text-mid col6">
                   <p className="item-title">{item.itemName}</p>
@@ -437,10 +438,6 @@ const MainOrder = (from) => {
               activeClassName="router-picked"
             >
               <div className="item-container-min force-minheight noborder row-dir">
-                <div className="item-img-container col2">
-                  <img className="item-img" src={item.data.img_url} />
-                </div>
-  
                 <div className="text-mid col6">
                   <p className="item-title">{item.itemName}</p>
                   <p style={{fontSize:"11px"}} className="item-desc">

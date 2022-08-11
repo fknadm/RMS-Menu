@@ -1,6 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 
+import qs from 'qs'
+
 import Hero from "../components/Hero";
 import MainOrder from "../components/MainOrder";
 
@@ -18,25 +20,35 @@ import SearchBar from "../components/SearchBar";
 const root = document.getElementById('root').style
 
 const Home = (something) => {
+
+  
   const body = document.body.style
   root.display = "flex"
   root.flexDirection = "column"
   root.justifyContent = "flex-start"
   root.alignItems = "flex-start"
   console.log(something.prop, 'app>Home')
+  let location = useLocation()
 
   const [dataState, setDataState] = useState([]);
   const [show, setShow] = useState(false)
   const [focus, setFocus] = useState([])
+  const queryObject = qs.parse(location.search, { ignoreQueryPrefix: true }).t
 
   useEffect(() => {
     body.background = "#ffffff"
 
+    if (queryObject) {
+      something.setTable(queryObject)
+    }
+
   }, []);
 
   let history = useHistory()
-  let location = useLocation()
   const { user } = useAuth0();
+
+  
+
 
 
   const sprop = {

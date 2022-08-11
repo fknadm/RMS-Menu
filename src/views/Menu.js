@@ -46,6 +46,10 @@ const Menu = (data) => {
   if (location.state.context === 'Drinks') {
     var dataContext = items.filter(x => x.category === "Drinks")
   }
+
+  if (location.state.context === 'Sandwiches') {
+    var dataContext = items.filter(x => x.category === "Sandwiches")
+  }
   
   var sprop = {
     table: data.tableData,

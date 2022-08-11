@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch, useLocation } from "react-router-dom";
 import { Container } from "reactstrap";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
@@ -22,6 +22,7 @@ import initFontAwesome from "./utils/initFontAwesome";
 import SingleOrder from "./views/SingleOrder";
 import OrdersCart from "./views/OrdersCart"
 import Thanks from "./views/Thanks"
+const qs = require('qs')
 
 initFontAwesome();
 const App = () => {
@@ -30,7 +31,7 @@ const App = () => {
   const [hide, setHide] = useState(false);
   const [table, setTable] = useState(['12'])
   const [cart, setCart] = useState([]);
-
+ 
   console.log(table,cart,'tablecheck')
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const App = () => {
           <Route path="/item" render={(prop) => <SingleOrder setCart={setCart} prop={cart} tableData={table} {...prop} />} />
           <Route path="/cart" render={(prop) => <OrdersCart setCart={setCart} data ={mainState} tableData={table} prop={cart} {...prop} />} />
             <Route path="/menu" render={(prop) => <Menu tableData={table} prop={mainState} {...prop} />} />
-            <Route path="/home" render={(prop) => <Home tableData={table} prop={mainState} {...prop} />} />
+            <Route path="/home" render={(prop) => <Home tableData={table} setTable={setTable} prop={mainState} {...prop} />} />
             <Route path="/" exact render={(prop) => <Landing setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
             <Route path="/thanks" exact render={(prop) => <Thanks data ={mainState} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
           </Switch>

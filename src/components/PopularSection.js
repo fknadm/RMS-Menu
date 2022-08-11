@@ -17,7 +17,7 @@ const PopSec = (from) => {
 
   return (
     <>     
-    <h5 style={{paddingLeft:'20px'}}>{from.context.title}</h5>
+    <h5 style={from.context.title === 'Add Ons' ? {} : {paddingLeft:'20px'}}>{from.context.title}</h5>
       <div style={from.context.title === 'Popular' ? { height: "350px" } : {}} className="hero-bar col-dir">
         <div className="row-2-grid">
         {loadList.map(item => {
@@ -35,13 +35,16 @@ const PopSec = (from) => {
             <div className="card-promo-row">
               <div className="promo-box-pop row-dir">
                 <div className="pop-box-card">
-                  <img className="popimg" style={from.context.focus === 'Appetizer' ? { width: "50%" } : {}} src={item.img_url} />
+                <div style={{background:`url(${item.img_url})`}} className="img-container unselected-item cover">
+          </div>
+                  {/* <img className="popimg" style={from.context.focus === 'Appetizer' ? { width: "50%" } : {}} src={item.img_url} /> */}
                   <p className="foodname">{item.name}</p>
                   <div className="price-row">
                     <p className="price">RM{item.price}</p>
                     <FontAwesomeIcon className="addIcon" icon="plus-circle" />
                   </div>
                 </div>
+               
               </div>
             </div>
             </Link>

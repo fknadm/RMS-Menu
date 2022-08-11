@@ -56,7 +56,7 @@ const FoodCarousell = (from) => {
               activeClassName="router-picked"
             >
         <div className="carou-tile">
-          <div style={{background:`url(${appe})`}}className="img-container unselected-item cover">
+          <div style={{background:`url(${appe})`}} className="img-container unselected-item cover">
           </div>
           <p className="carou-title">Appetizer</p>
         </div>
@@ -92,12 +92,22 @@ const FoodCarousell = (from) => {
           <p className="carou-title">Beverages</p>
         </div>
         </Link>
+        <Link
+              tag={RouterNavLink}
+              to={{
+                pathname:'/menu',
+                state:{context:'Sandwiches'}
+              }}
+              exact
+              activeClassName="router-picked"
+            >
         <div className="carou-tile">
           <div className="img-container unselected-item">
             <img className="carou-icon" src={defimg} />
           </div>
-          <p className="carou-title">Appetizer</p>
+          <p className="carou-title">Sandwiches</p>
         </div>
+        </Link>
       </div>
     </div>
   )
