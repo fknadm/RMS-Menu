@@ -33,7 +33,7 @@ export const remOrder = async (data) => {
 
 export const sendNewOrder = (data) => {
     if (data.fdata.length > 0 ) {
-        var fsum = data.fdata.map(item => item.iprice).reduce((prev, next) => prev + next)
+        var fsum = data.fdata.map(item => item.iprice).reduce((prev, next) => parseInt(prev) + parseInt(next))
     }
 
     else {
@@ -41,7 +41,7 @@ export const sendNewOrder = (data) => {
     }
 
     if (data.ddata.length > 0 ) {
-        var dsum = data.ddata.map(itemD => itemD.iprice).reduce((prev, next) => prev + next)
+        var dsum = data.ddata.map(itemD => itemD.iprice).reduce((prev, next) => parseInt(prev) + parseInt(next))
     }
 
     else {
