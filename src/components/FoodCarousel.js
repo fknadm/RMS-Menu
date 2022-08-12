@@ -28,7 +28,9 @@ const FoodCarousell = (from) => {
   console.log(from)
 
   return (
-    <div className="hero-bar col-dir">
+    <div style={
+      {zIndex:'1'}
+    } className="hero-bar col-dir">
       <div className="carousel-items row-dir">
       <Link
               tag={RouterNavLink}

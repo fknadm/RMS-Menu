@@ -29,7 +29,7 @@ const App = () => {
   const sample = [ { "id": "9qO1Wmcdur3a7UQGoeE8", "chefrec": false, "img_url": "https://img.freepik.com/free-photo/homemade-tasty-bread-with-garlic-cheese-herbs-kitchen-table_1150-47119.jpg?t=st=1658374495~exp=1658375095~hmac=fcd1f1e1d53cf708cec0cf1f21ab9a4072b6eaa604c82f3f71769b59c45b7910&w=740", "desc": "Toasty, buttery, herby, covered in a dusting of salty parmesan cheese, piping hot and fresh out of the oven", "avail": true, "name": "Garlic Bread", "category": "Appetizer", "price": 20 } ]
   const [mainState, setMainState] = useState([]);
   const [hide, setHide] = useState(false);
-  const [table, setTable] = useState(['12'])
+  const [table, setTable] = useState(0)
   const [cart, setCart] = useState([]);
  
   console.log(table,cart,'tablecheck')

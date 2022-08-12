@@ -10,6 +10,16 @@ export const globalFetch = async () => {
         )
 }
 
+export const globalFetchTables = async () => {
+    return fetch('https://us-central1-rms-deployment1.cloudfunctions.net/orders', {
+        method: "GET"
+    })
+        .then(resp =>
+            resp.json()
+        )
+}
+
+
 export const remOrder = async (data) => {
     return fetch(`https://us-central1-rms-deployment1.cloudfunctions.net/ordersingle/${data.txid}`, {
         method: "GET",
@@ -49,17 +59,20 @@ export const sendNewOrder = (data) => {
     }
     var totalData = parseInt(fsum)+parseInt(dsum)
 
+    const tables = globalFetchTables().then(res => {return res.reduce()})
+
     const order = {
         drink:data.ddata,
         food:data.fdata,
-        orderId:moment().format('hMs')+data.tdata.table,
+        orderId:moment().format('hMs')+moment().valueOf(),
         status:'pending',
         submitted:moment().format('DD/MM/YYYY'),
         submitted_t:moment().format('HH:mm'),
         table_no:data.tdata.table,
         tprice: totalData,
-        txid:moment().format('hMs'),
-        end:''
+        txid:moment().format('hMs')+moment().valueOf(),
+        end:'',
+        masterTable:data.tdata.table
     }
 
     return fetch('https://us-central1-rms-deployment1.cloudfunctions.net/orders', {

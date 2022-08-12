@@ -308,14 +308,14 @@ p {
   opacity: 0.7;
 }
 
-.modalInner {
+.modalInner-n {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  width: 100%;
+  height: 40%;
+  width: 70%;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -323,7 +323,29 @@ p {
   align-items: center;
   animation-name: modalFade;
   animation-duration: .5s;
+  border-radius: 26px;
+  margin: auto;
+  background-color: #ffffff;
 
+
+}
+
+.modalInner {
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-name: modalFade;
+  animation-duration: .5s;
+    
 }
 
 @keyframes modalFade {
@@ -340,15 +362,27 @@ p {
 
 .modalTotal {
   display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 3;
+    background-color: #ffffff;
+    text-align: center;
+    width: 60%;
+    height: 35%;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.modalTotal-n {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   z-index: 3;
   background-color: #ffffff;
   text-align: center;
-  width: 60%;
-  height: 35%;
-  border-radius: 12px 12px 0px 0px;
+  padding:10px;
+  border-radius: 26px;
 }
 
 .modalButtons {
@@ -1132,6 +1166,16 @@ label {
   background-color: #ffffff;
   position: absolute;
   width: 90%;
+}
+
+.btn-sub-t {
+  border-radius: 26px;
+  padding: 7px 10px;
+  width: 100%;
+  background-color: #FCFF61;
+  border: navajowhite;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 
