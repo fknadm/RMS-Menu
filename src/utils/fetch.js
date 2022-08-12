@@ -59,18 +59,19 @@ export const sendNewOrder = (data) => {
     }
     var totalData = parseInt(fsum)+parseInt(dsum)
 
-    const tables = globalFetchTables().then(res => {return res.reduce()})
-
+    // const tables = globalFetchTables().then(res => {return res.reduce()})
+    const lastmil = moment().valueOf()
+    const shortId = moment().format('hm')+JSON.stringify(lastmil).slice(-2)
     const order = {
         drink:data.ddata,
         food:data.fdata,
-        orderId:moment().format('hMs')+moment().valueOf(),
+        orderId:data.tdata.table+shortId,
         status:'pending',
         submitted:moment().format('DD/MM/YYYY'),
         submitted_t:moment().format('HH:mm'),
         table_no:data.tdata.table,
         tprice: totalData,
-        txid:moment().format('hMs')+moment().valueOf(),
+        txid:moment().format('hMs')+shortId,
         end:'',
         masterTable:data.tdata.table
     }

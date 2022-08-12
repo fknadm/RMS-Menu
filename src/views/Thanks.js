@@ -81,12 +81,12 @@ const Thanks = (data) => {
     <div className="bg-land">
       <img className="landing-logo" src={hlogo} />
       <div className="landing-inner">
-        <h2 className="landing-title">Thank You For Your Order!</h2>
-        <p className="landing-inst">Please Screenshot this page as an order confirmation, or do not navigate away from this page. This order confirmation page will be used to confirm payment at the cashier.</p>
+        <h2 className="landing-title">Your order has been placed!</h2>
         <h4 className="landing-table">Table: {data.tableData}</h4>
+        <h3 className="landing-inst">Order Receipt:</h3>
 
         <div>
-        <MainOrder data2={sprop} data={data.cart} mqty={gvar1}/>
+        <MainOrder view={'thanks'} data2={sprop} data={data.cart} mqty={gvar1}/>
         <SumCheck view={'thanks'} data={data.cart}/>
         </div>
 

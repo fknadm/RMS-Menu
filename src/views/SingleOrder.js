@@ -117,7 +117,7 @@ const SingleOrder = (from) => {
 
           <div className="btn-rows">
             <Input onChange={e => handleChange(e)} className="comment-box" type="text" placeholder="Comments" />
-            <button onClick={() => { add({ newItem: data, currentCart: from.prop, comments: comms + ' ' + ice }) }} className="addCart">Add to Cart</button>
+            {data.category === 'Drinks' ? <button onClick={() => { add({ newItem: data, currentCart: from.prop, comments: comms + ' ' + ice }) }} className="addCart">Add to Cart</button> :             <button onClick={() => { add({ newItem: data, currentCart: from.prop, comments: comms }) }} className="addCart">Add to Cart</button>}
           </div>
         </div>
       </div>

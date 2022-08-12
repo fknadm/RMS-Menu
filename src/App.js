@@ -45,7 +45,7 @@ const App = () => {
         <Container id="container" className="">
           <Switch>
           <Route path="/item" render={(prop) => <SingleOrder setCart={setCart} prop={cart} tableData={table} {...prop} />} />
-          <Route path="/cart" render={(prop) => <OrdersCart setCart={setCart} data ={mainState} tableData={table} prop={cart} {...prop} />} />
+          <Route path="/cart" render={(prop) => <OrdersCart setCart={setCart} data ={mainState} tableData={table} setTable={setTable} prop={cart} {...prop} />} />
             <Route path="/menu" render={(prop) => <Menu tableData={table} prop={mainState} {...prop} />} />
             <Route path="/home" render={(prop) => <Home tableData={table} setTable={setTable} prop={mainState} {...prop} />} />
             <Route path="/" exact render={(prop) => <Landing setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />

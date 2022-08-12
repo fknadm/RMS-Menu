@@ -29,7 +29,7 @@ const FoodCarousell = (from) => {
 
   return (
     <div style={
-      {zIndex:'1'}
+      {zIndex:'0'}
     } className="hero-bar col-dir">
       <div className="carousel-items row-dir">
       <Link

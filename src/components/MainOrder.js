@@ -498,7 +498,7 @@ const MainOrder = (from) => {
 
 
   return (
-    <div className="item-list" style={{backgroundColor:'#ffffff'}}>
+    <div className={from.view === 'thanks' ? "iem-list-n" : "item-list"} style={{backgroundColor:'#ffffff'}}>
       {renderItems}
     </div>
   );

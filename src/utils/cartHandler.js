@@ -17,20 +17,21 @@ export const cartAdd = async (state) => {
 
     const matchingItems = exist.filter(x => { return x.id === targetId})
     const increment = matchingItems.length+1
-    
+    const lastmil = moment().valueOf()
+    const shortId = moment().format('hm')+JSON.stringify(lastmil).slice(-2)
     console.log(increment)
 
     if (exist.length > 0) {
         for (let i =0; i < exist.length; i++) {
             if (exist[i].id === targetId) {
-                const fresh = {...newOrder,'tid':moment().unix(),comms:comm}
+                const fresh = {...newOrder,'tid':moment().unix()+shortId,comms:comm}
                 const newArray = exist.concat(fresh)
                 
                 return newArray
 
             }
             else if (exist[i].id !== targetId) {
-                const fresh = {...newOrder,'tid':moment().unix(),comms:comm}
+                const fresh = {...newOrder,'tid':moment().unix()+shortId,comms:comm}
                 const newerArray = exist.concat(fresh)
                 
                 return newerArray

@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
+import { Input } from "reactstrap";
 
 import Hero from "../components/Hero";
 import MainOrder from "../components/MainOrder";
@@ -26,6 +27,8 @@ const Orders = (data) => {
   const [show, setShow] = useState(false)
   const [focus, setFocus] = useState([])
   const [newArr, setNewArr ] = useState([])
+  const [inputT,setInput] = useState([])
+
 
   useEffect(() => {
   }, []); 
@@ -100,9 +103,25 @@ const Orders = (data) => {
 
     <>
        <Hero data={sprop} />
+       {show ?       <>
+    <div className="modalConfirm">
+    {    document.body.style.overflow='hidden'}
+
+      </div>
+      <div className="modalInner-n">
+        <div className="modalTotal-n">
+        <h2>
+            Hi! What's your table number?
+          </h2>
+          <Input onChange={(e) => { setInput(e.target.value) }} placeholder="Table No." type="text" maxLength={2} />
+          <button className="btn-sub-t" onClick={() => {data.setTable(inputT);document.body.style.overflow='scroll';setShow(false)}}>Submit</button>
+        </div>
+
+      </div>  
+      </> : ''}
        {items.length < 1 ? <h5 className="notice-sm">Add Items to your order to continue</h5> : ''}
       <MainOrder data2={sprop} data={items} setNewCart={data.setCart} setFocus={setFocus} setShow={setShow} mqty={gvar1}/>
-      {items.length >= 1 ? <SumCheck view={'cart'} fetchData={{tdata:sprop,fdata:mFoodItems,ddata:mDrinkItems}} data={items}/> : ''}
+      {items.length >= 1 ? <SumCheck setShow={setShow} view={'cart'} tdata={data.tableData }fetchData={{tdata:sprop,fdata:mFoodItems,ddata:mDrinkItems}} data={items}/> : ''}
       {/* <SumCheck data={items}/> */}
 
     </>

@@ -670,6 +670,7 @@ body {
   overflow-x: scroll;
   -ms-overflow-style: none;
   margin: 20px 0px;
+  z-index: 0;
 }
 
 .carousel-items::-webkit-scrollbar {
@@ -1058,6 +1059,10 @@ flex-direction: row;
 .item-list {
   overflow-y: scroll;
   margin-bottom: 300px;
+}
+
+.item-list-n {
+  overflow-y: scroll;
 }
 
 .landing-inst,.landing-title,.landing-table {

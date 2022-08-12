@@ -29,14 +29,18 @@ const SumCheck = (from) => {
     history.push("/thanks");
   }
 
+
   return (
 <>
-    {from.view === 'cart' ?  <div className="hero-header force-bottom">
+    {from.view === 'cart' ? 
+    
+    <div className="hero-header force-bottom">
       <div className="staggered-flex">
         <div className="row-dir between"><p className="tbal">Total: </p><p style={{fontSize:"25px",color:"#E3B100"}} className="tbal">RM{calcTax(bTax, taxSet).total}</p></div>
         <div className="row-dir between"><p className="btax">Before Tax: </p><p className="btax">RM{bTax.toFixed(2)}</p></div>
       <div className="row-dir between"><p className="tval">Tax & Service Charge </p><p className="tval">RM{calcTax(bTax, taxSet).tvalue}</p></div>
-      <button onClick={() => {sendNewOrder(from.fetchData);navTo()}} className="addCart">Place Order</button>
+      {from.tdata < 1 ? <button onClick={() => {from.setShow(true)}} className="addCart">Place Order</button> :  <button onClick={() => {sendNewOrder(from.fetchData);navTo()}} className="addCart">Place Order</button>}
+     
 
     </div>
 
