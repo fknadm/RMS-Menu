@@ -63,7 +63,7 @@ const Menu = (data) => {
 
     <>
        <Hero data={sprop} />
-      <SearchBar data={sprop} />
+      <SearchBar data={items} />
       <MainOrder data2={sprop} data={dataContext} setFocus={setFocus} setShow={setShow}/>
     </>
   )
