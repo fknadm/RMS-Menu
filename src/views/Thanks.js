@@ -16,6 +16,8 @@ import { Input } from "reactstrap";
 const Thanks = (data) => {
 
   const root = document.getElementById('root').style
+  const app = document.getElementById('app').style
+
   const body = document.body.style
   const history = useHistory();
 
@@ -25,6 +27,7 @@ const Thanks = (data) => {
     root.display = "flex"
     root.justifyContent = "center"
     root.alignItems = "center"
+    app.overflowY = "scroll"
   }, []);
 
   const items = data.prop

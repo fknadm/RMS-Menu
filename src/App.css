@@ -521,7 +521,7 @@ p {
 html,
 body {
   overscroll-behavior-x: none;
-  overscroll-behavior-y: none;
+  /* overscroll-behavior-y: none; */
 }
 
 .paid-order {
@@ -887,8 +887,8 @@ a {
 }
 
 .solo-title {
-  font-size: 30px;
-    font-weight: 700;
+  font-size: 25px;
+      font-weight: 700;
 }
 
 
