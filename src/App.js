@@ -52,7 +52,7 @@ const App = () => {
             <Route path="/thanks" exact render={(prop) => <Thanks data ={mainState} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
           </Switch>
         </Container>
-        {hide ? '' : <NavBarInt  data={cart} prop={mainState} />}
+      <NavBarInt  data={cart} prop={mainState} />
       </div>
     </Router>
   );
