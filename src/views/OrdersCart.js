@@ -28,9 +28,17 @@ const Orders = (data) => {
   const [focus, setFocus] = useState([])
   const [newArr, setNewArr ] = useState([])
   const [inputT,setInput] = useState([])
+  const [hide,setHide] = useState(false)
 
 
   useEffect(() => {
+    if (hide) {
+      document.body.style.overflow='hidden'
+    } 
+
+    else if (!hide) {
+      document.body.style.overflow='scroll'
+    }
   }, []); 
 
  
@@ -105,8 +113,6 @@ const Orders = (data) => {
        <Hero data={sprop} />
        {show ?       <>
     <div className="modalConfirm">
-    {    document.body.style.overflow='hidden'}
-
       </div>
       <div className="modalInner-n">
         <div className="modalTotal-n">
@@ -114,7 +120,7 @@ const Orders = (data) => {
             Hi! What's your table number?
           </h2>
           <Input onChange={(e) => { setInput(e.target.value) }} placeholder="Table No." type="text" maxLength={2} />
-          <button className="btn-sub-t" onClick={() => {data.setTable(inputT);document.body.style.overflow='scroll';setShow(false)}}>Submit</button>
+          <button className="btn-sub-t" onClick={() => {data.setTable(inputT);setHide(true);setShow(false)}}>Submit</button>
         </div>
 
       </div>  

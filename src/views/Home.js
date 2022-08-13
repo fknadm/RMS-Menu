@@ -35,7 +35,7 @@ const Home = (something) => {
   const [show, setShow] = useState(false)
   const [focus, setFocus] = useState([])
   const [inputT,setInput] = useState([])
-  const [hide,setHide] = useState('scroll')
+  const [hide,setHide] = useState(false)
 
 
   const queryObject = qs.parse(location.search, { ignoreQueryPrefix: true }).t
@@ -46,6 +46,15 @@ const Home = (something) => {
     if (queryObject) {
       something.setTable(queryObject)
     }
+
+    if (hide) {
+      document.body.style.overflow='hidden'
+    } 
+
+    else if (!hide) {
+      document.body.style.overflow='scroll'
+    }
+
 
   }, []);
 
@@ -72,8 +81,6 @@ const Home = (something) => {
       {something.tableData < 1  ? 
       <>
     <div className="modalConfirm">
-    {    document.body.style.overflow='hidden'}
-
       </div>
       <div className="modalInner-n">
         <div className="modalTotal-n">
@@ -81,7 +88,7 @@ const Home = (something) => {
             Hi! What's your table number?
           </h2>
           <Input onChange={(e) => { setInput(e.target.value) }} placeholder="Table No." type="text" maxLength={2} />
-          <button className="btn-sub-t" onClick={() => {something.setTable(inputT);document.body.style.overflow='scroll'}}>Submit</button>
+          <button className="btn-sub-t" onClick={() => {something.setTable(inputT);setHide(true)}}>Submit</button>
         </div>
 
       </div>  
