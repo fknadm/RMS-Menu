@@ -524,6 +524,19 @@ body {
   /* overscroll-behavior-y: none; */
 }
 
+.btn-h {
+  border: none;
+  background-color: #1F8C2A;
+  color: #ffffff;
+  border-radius: 26px;
+}
+
+.btn-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .paid-order {
   width: 100%;
   margin: 10px 0px;

@@ -33,6 +33,10 @@ const Thanks = (data) => {
   const items = data.prop
   const menu = data.data
 
+  const navTo = () => {
+    history.push("/home");
+  }
+
   if (items.length === 1) {
     var title = items.length+' item in Order'
   }
@@ -85,6 +89,9 @@ const Thanks = (data) => {
       <img className="landing-logo" src={hlogo} />
       <div className="landing-inner">
         <h2 className="landing-title">Your order has been placed!</h2>
+        <div className="btn-home">
+        <button className="btn-h" onClick={()=>navTo()}>Return Home</button>
+        </div>
         <h4 className="landing-table">Table: {data.tableData}</h4>
         <h3 className="landing-inst">Order Receipt:</h3>
 
