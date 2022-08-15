@@ -50,7 +50,7 @@ const App = () => {
             <Route path="/menu" render={(prop) => <Menu setForce={setForce} tableData={table} prop={mainState} {...prop} />} />
             <Route path="/home" render={(prop) => <Home setForce={setForce} tableData={table} setTable={setTable} prop={mainState} {...prop} />} />
             <Route path="/" exact render={(prop) => <Landing setForce={setForce} setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
-            <Route path="/thanks" exact render={(prop) => <Thanks data ={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
+            <Route path="/thanks" exact render={(prop) => <Thanks forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
           </Switch>
         </Container>
    {forceHide ? '' : <NavBarInt  data={cart} prop={mainState} /> }

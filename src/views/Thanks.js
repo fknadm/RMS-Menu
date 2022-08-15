@@ -29,17 +29,25 @@ const Thanks = (data) => {
     root.justifyContent = "center"
     root.alignItems = "center"
     app.overflowY = "scroll"
-    
-    data.setForce(true)
+
+    data.setForce(true)   
+
+    return history.listen(() => { // listen
+      if (history.action === "POP") {
+        history.replace("/home");
+        data.setCart([])
+      }
+    });
 
 
-  }, []);
+  }, [history]);
 
   const items = data.prop
   const menu = data.data
 
   const navTo = () => {
     history.push("/home");
+    data.setCart([])
   }
 
   if (items.length === 1) {
