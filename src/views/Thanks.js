@@ -102,6 +102,7 @@ const Thanks = (data) => {
       <img className="landing-logo" src={hlogo} />
       <div className="landing-inner">
         <h2 className="landing-title">Your order has been placed!</h2>
+        <h5><b>Please Screenshot This Order Receipt</b></h5>
         <div className="btn-home">
         <button className="btn-h" onClick={()=>navTo()}>Return Home</button>
         </div>
