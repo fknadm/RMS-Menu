@@ -775,9 +775,10 @@ body {
 
 .item-container-n {
   align-items: center;
-  height: 50px;
+  height: 50%;
   margin: 10px;
   padding: 10px 10px;
+  max-height: 100px;
 }
 
 .item-container-min {

@@ -29,8 +29,7 @@ const Thanks = (data) => {
     root.justifyContent = "center"
     root.alignItems = "center"
     app.overflowY = "scroll"
-
-    data.setCart([])
+    
     data.setForce(true)
 
 
