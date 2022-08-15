@@ -55,6 +55,9 @@ const Home = (something) => {
       document.body.style.overflow='scroll'
     }
 
+   something.setForce(false)
+
+
 
   }, []);
 

@@ -25,6 +25,8 @@ const Menu = (data) => {
   const [focus, setFocus] = useState([])
 
   useEffect(() => {
+    data.setForce(false)
+
   }, []); 
 
  

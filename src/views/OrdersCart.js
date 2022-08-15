@@ -39,6 +39,9 @@ const Orders = (data) => {
     else if (!hide) {
       document.body.style.overflow='scroll'
     }
+
+    data.setForce(false)
+
   }, []); 
 
  

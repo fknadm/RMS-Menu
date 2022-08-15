@@ -29,6 +29,8 @@ const SingleOrder = (from) => {
 
     containers.paddingRight = '0px'
     containers.paddingLeft = '0px'
+
+    from.setForce(false)
   });
 
   const conData = {

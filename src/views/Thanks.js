@@ -17,6 +17,7 @@ const Thanks = (data) => {
 
   const root = document.getElementById('root').style
   const app = document.getElementById('app').style
+  const nav = document.getElementById('todel').style
 
   const body = document.body.style
   const history = useHistory();
@@ -28,6 +29,11 @@ const Thanks = (data) => {
     root.justifyContent = "center"
     root.alignItems = "center"
     app.overflowY = "scroll"
+
+    data.setCart([])
+    data.setForce(true)
+
+
   }, []);
 
   const items = data.prop

@@ -34,7 +34,7 @@ const NavBarInt = (test) => {
   return (
     <>
     {test.route === 'landing' ? '' :  
-    <div className="nav-container">
+    <div id="todel" className="nav-container">
     <Navbar color="light" light expand="md">
       <Container style={{}}>
         <Nav className="mr-auto" navbar>

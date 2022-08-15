@@ -23,6 +23,8 @@ const Landing = (data) => {
     root.display = "flex"
     root.justifyContent = "center"
     root.alignItems = "center"
+    data.setForce(true)
+
   }, []);
 
   const handleTable = (from) => {
