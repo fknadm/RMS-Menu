@@ -15,14 +15,15 @@ import { Input } from "reactstrap";
 
 const Thanks = (data) => {
 
-  const root = document.getElementById('root').style
-  const app = document.getElementById('app').style
-  const nav = document.getElementById('todel').style
 
-  const body = document.body.style
   const history = useHistory();
 
   useEffect(() => {
+    const root = document.getElementById('root').style
+    const app = document.getElementById('app').style
+    const nav = document.getElementById('todel').style
+  
+    const body = document.body.style
     data.setHide(true)
     body.background = "#FFD53E"
     root.display = "flex"
@@ -101,8 +102,7 @@ const Thanks = (data) => {
     <div className="bg-land">
       <img className="landing-logo" src={hlogo} />
       <div className="landing-inner">
-        <h2 className="landing-title">Your order has been placed!</h2>
-        <h5><b>Please Screenshot This Order Receipt</b></h5>
+        <h2 className="landing-title">Your order has been sent!</h2>
         <div className="btn-home">
         <button className="btn-h" onClick={()=>navTo()}>Return Home</button>
         </div>

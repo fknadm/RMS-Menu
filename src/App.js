@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Router, Route, Switch, useLocation } from "react-router-dom";
+import { Router, Route, Switch, useLocation, useHistory } from "react-router-dom";
 import { Container } from "reactstrap";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
@@ -11,7 +11,7 @@ import Cashier from "./views/Cashier";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import NavBarInt from "./components/NavBarInternal";
-import { globalFetch } from "./utils/fetch";
+import { globalFetch, ordersFetch } from "./utils/fetch";
 import Home from "./views/Home";
 import { useCollection, useCollectionData } from 'react-firebase-hooks/firestore'
 import Noti from "./components/Noti"
@@ -22,6 +22,7 @@ import initFontAwesome from "./utils/initFontAwesome";
 import SingleOrder from "./views/SingleOrder";
 import OrdersCart from "./views/OrdersCart"
 import Thanks from "./views/Thanks"
+import CheckOrder from "./views/CheckOrder";
 const qs = require('qs')
 
 initFontAwesome();
@@ -32,25 +33,39 @@ const App = () => {
   const [table, setTable] = useState(0)
   const [cart, setCart] = useState([]);
   const [forceHide, setForce] = useState(false)
- 
+  const [orders, setOrders] = useState([])
+  const [myOrder, setMyorder] = useState([])
+
+
   console.log(table,cart,'tablecheck')
 
   useEffect(() => {
     globalFetch().then(res => setMainState(res))
+    ordersFetch().then(res => setOrders(res))
 
-  },[]);
+    if (table > 0) {
+      const pending = orders.filter(x => {return x.status === 'pending' && x.table_no === table})
+      setMyorder(pending)
+     }
 
+ 
+
+  },[table]);
+
+  
   return (
     <Router history={history}>
       <div id="app" className="">
         <Container id="container" className="">
           <Switch>
           <Route path="/item" render={(prop) => <SingleOrder setForce={setForce} setCart={setCart} prop={cart} tableData={table} {...prop} />} />
-          <Route path="/cart" render={(prop) => <OrdersCart setForce={setForce} setCart={setCart} data ={mainState} tableData={table} setTable={setTable} prop={cart} {...prop} />} />
-            <Route path="/menu" render={(prop) => <Menu setForce={setForce} tableData={table} prop={mainState} {...prop} />} />
-            <Route path="/home" render={(prop) => <Home setForce={setForce} tableData={table} setTable={setTable} prop={mainState} {...prop} />} />
+          <Route path="/cart" render={(prop) => <OrdersCart myOrder={myOrder} setForce={setForce} setCart={setCart} data ={mainState} tableData={table} setTable={setTable} prop={cart} {...prop} />} />
+            <Route path="/menu" render={(prop) => <Menu myOrder={myOrder} setForce={setForce} tableData={table} prop={mainState} {...prop} />} />
+            <Route path="/home" render={(prop) => <Home myOrder={myOrder} setForce={setForce} tableData={table} setTable={setTable} prop={mainState} {...prop} />} />
             <Route path="/" exact render={(prop) => <Landing setForce={setForce} setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
             <Route path="/thanks" exact render={(prop) => <Thanks forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
+            <Route path="/check" exact render={(prop) => <CheckOrder myOrder={myOrder} forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
+
           </Switch>
         </Container>
    {forceHide ? '' : <NavBarInt  data={cart} prop={mainState} /> }

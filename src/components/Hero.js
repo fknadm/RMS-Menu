@@ -5,12 +5,18 @@ import { useHistory} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Hero = (from) => {
+  
 console.log(from)
+
 const history = useHistory();
+
+const navTo = () => {
+  history.push("/check");
+}
 
   
 return(
-  <div className="hero-header">
+  <div onClick={()=>navTo()} className="hero-header">
     <div className="row-dir">
     {from.data.title !== 'Menu' ? <FontAwesomeIcon size="2x" className="chev-back space-right" onClick={() => history.goBack()} icon='chevron-left'/> : ''}
 
@@ -19,6 +25,7 @@ return(
     <div>
         <p className="circleTable">{from.data.table}</p>
     </div>
+    {from.myOrder.length >= 1 ? <p className="cart-noti2">{from.myOrder.length}</p> : ''}
   </div>
 )};
 

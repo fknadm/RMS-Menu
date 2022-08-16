@@ -80,7 +80,7 @@ const Home = (something) => {
 
   return (
     <>
-      <Hero data={sprop} />
+      <Hero myOrder={something.myOrder} data={sprop} />
       {something.tableData < 1  ? 
       <>
     <div className="modalConfirm">

@@ -31,40 +31,58 @@ const Menu = (data) => {
 
  
   const items = data.prop
-  const { user } = useAuth0();
 
-  if (location.state.context === 'All Items') {
+  if (location.state) {
+    if (location.state.context === 'All Items') {
+      var dataContext = items
+    }
+  
+    if (location.state.context === 'Appetizer') {
+      var dataContext = items.filter(x => x.category === "Appetizer")
+    }
+  
+    if (location.state.context === 'Pasta') {
+      var dataContext = items.filter(x => x.category === "Pasta")
+    }
+  
+    if (location.state.context === 'Drinks') {
+      var dataContext = items.filter(x => x.category === "Drinks")
+    }
+  
+    if (location.state.context === 'Sandwiches') {
+      var dataContext = items.filter(x => x.category === "Sandwiches")
+    }
+  }
+  else {
     var dataContext = items
   }
 
-  if (location.state.context === 'Appetizer') {
-    var dataContext = items.filter(x => x.category === "Appetizer")
+
+  if (location.state) {
+    var sprop = {
+      table: data.tableData,
+      title: location.state.context,
+      init: items,
+      context:'full'
+    }
   }
 
-  if (location.state.context === 'Pasta') {
-    var dataContext = items.filter(x => x.category === "Pasta")
-  }
-
-  if (location.state.context === 'Drinks') {
-    var dataContext = items.filter(x => x.category === "Drinks")
-  }
-
-  if (location.state.context === 'Sandwiches') {
-    var dataContext = items.filter(x => x.category === "Sandwiches")
+  else {
+    var sprop = {
+      table: data.tableData,
+      title: 'All Items',
+      init: items,
+      context:'full'
+    }
   }
   
-  var sprop = {
-    table: data.tableData,
-    title: location.state.context,
-    init: items,
-    context:'full'
-  }
+ 
 
 
   return (
 
     <>
-       <Hero data={sprop} />
+       <Hero myOrder={data.myOrder} data={sprop} />
       <SearchBar data={items} />
       <MainOrder data2={sprop} data={dataContext} setFocus={setFocus} setShow={setShow}/>
     </>

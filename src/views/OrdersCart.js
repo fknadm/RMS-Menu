@@ -113,7 +113,7 @@ const Orders = (data) => {
   return (
 
     <>
-       <Hero data={sprop} />
+       <Hero myOrder={data.myOrder} data={sprop} />
        {show ?       <>
     <div className="modalConfirm">
       </div>

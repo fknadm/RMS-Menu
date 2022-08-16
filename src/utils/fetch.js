@@ -10,6 +10,15 @@ export const globalFetch = async () => {
         )
 }
 
+export const ordersFetch = async () => {
+    return fetch('https://us-central1-rms-deployment1.cloudfunctions.net/orders', {
+        method: "GET"
+    })
+        .then(resp =>
+            resp.json()
+        )
+}
+
 export const globalFetchTables = async () => {
     return fetch('https://us-central1-rms-deployment1.cloudfunctions.net/orders', {
         method: "GET"
