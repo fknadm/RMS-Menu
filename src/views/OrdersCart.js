@@ -105,8 +105,8 @@ const Orders = (data) => {
   var drinkItems = items.filter(y => y.category === 'Drinks')
 
 
-  var mFoodItems = foodItems.map(item => {return {comments:item.comms,f_name:item.name,status:'pending','tid':item.tid,iprice:item.price}})
-  var mDrinkItems = drinkItems.map(item => {return {comments:item.comms,f_name:item.name,status:'pending','tid':item.tid,iprice:item.price}})
+  var mFoodItems = foodItems.map(item => {return {comments:item.comms,f_name:item.name,status:'pending','tid':item.tid,iprice:item.price,'category':item.category}})
+  var mDrinkItems = drinkItems.map(item => {return {comments:item.comms,f_name:item.name,status:'pending','tid':item.tid,iprice:item.price,'category':item.category}})
 
   return (
 
