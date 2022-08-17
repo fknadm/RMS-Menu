@@ -3,7 +3,7 @@ import "../App.css"
 import { Container, Row, Col } from "reactstrap";
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { sendNewOrder } from "../utils/fetch";
+import { ordersFetch, sendNewOrder } from "../utils/fetch";
 
 const SumCheck = (from) => {
 

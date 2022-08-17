@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Container, Row, Col, Form } from "reactstrap";
-
+import { ordersFetch } from "../utils/fetch";
 import qs from 'qs'
 
 import Hero from "../components/Hero";
@@ -41,6 +41,15 @@ const Home = (something) => {
   const queryObject = qs.parse(location.search, { ignoreQueryPrefix: true }).t
 
   useEffect(() => {
+
+    ordersFetch().then(res =>{
+
+      const pending = res.filter(x => {return x.status === 'pending' && x.table_no === something.tableData})
+      something.setMyorder(pending)
+    
+    })
+
+
     body.background = "#ffffff";
 
     if (queryObject) {

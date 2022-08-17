@@ -104,11 +104,9 @@ const Orders = (data) => {
   var foodItems = items.filter(x => x.category !== 'Drinks')
   var drinkItems = items.filter(y => y.category === 'Drinks')
 
+
   var mFoodItems = foodItems.map(item => {return {comments:item.comms,f_name:item.name,status:'pending','tid':item.tid,iprice:item.price}})
   var mDrinkItems = drinkItems.map(item => {return {comments:item.comms,f_name:item.name,status:'pending','tid':item.tid,iprice:item.price}})
-
-
-  console.log(mFoodItems,mDrinkItems,'mutated')
 
   return (
 
@@ -130,7 +128,7 @@ const Orders = (data) => {
       </> : ''}
        {items.length < 1 ? <h5 className="notice-sm">Add Items to your order to continue</h5> : ''}
       <MainOrder data2={sprop} data={items} setNewCart={data.setCart} setFocus={setFocus} setShow={setShow} mqty={gvar1}/>
-      {items.length >= 1 ? <SumCheck setShow={setShow} view={'cart'} tdata={data.tableData }fetchData={{tdata:sprop,fdata:mFoodItems,ddata:mDrinkItems}} data={items}/> : ''}
+      {items.length >= 1 ? <SumCheck refresh={data.setOrders} setShow={setShow} view={'cart'} tdata={data.tableData } fetchData={{tdata:sprop,fdata:mFoodItems,ddata:mDrinkItems}} data={items}/> : ''}
       {/* <SumCheck data={items}/> */}
 
     </>

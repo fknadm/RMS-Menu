@@ -59,11 +59,11 @@ const App = () => {
         <Container id="container" className="">
           <Switch>
           <Route path="/item" render={(prop) => <SingleOrder setForce={setForce} setCart={setCart} prop={cart} tableData={table} {...prop} />} />
-          <Route path="/cart" render={(prop) => <OrdersCart myOrder={myOrder} setForce={setForce} setCart={setCart} data ={mainState} tableData={table} setTable={setTable} prop={cart} {...prop} />} />
+          <Route path="/cart" render={(prop) => <OrdersCart setOrders={setOrders} myOrder={myOrder} setForce={setForce} setCart={setCart} data ={mainState} tableData={table} setTable={setTable} prop={cart} {...prop} />} />
             <Route path="/menu" render={(prop) => <Menu myOrder={myOrder} setForce={setForce} tableData={table} prop={mainState} {...prop} />} />
-            <Route path="/home" render={(prop) => <Home myOrder={myOrder} setForce={setForce} tableData={table} setTable={setTable} prop={mainState} {...prop} />} />
+            <Route path="/home" render={(prop) => <Home myOrder={myOrder} setForce={setForce} tableData={table} setMyorder={setMyorder} setTable={setTable} prop={mainState} {...prop} />} />
             <Route path="/" exact render={(prop) => <Landing setForce={setForce} setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
-            <Route path="/thanks" exact render={(prop) => <Thanks forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
+            <Route path="/thanks" exact render={(prop) => <Thanks setMyorder={setMyorder} setOrders={setOrders} forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
             <Route path="/check" exact render={(prop) => <CheckOrder myOrder={myOrder} forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
 
           </Switch>

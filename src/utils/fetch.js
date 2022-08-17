@@ -50,7 +50,7 @@ export const remOrder = async (data) => {
 
 }
 
-export const sendNewOrder = (data) => {
+export const sendNewOrder = async (data) => {
     if (data.fdata.length > 0 ) {
         var fsum = data.fdata.map(item => item.iprice).reduce((prev, next) => parseInt(prev) + parseInt(next))
     }
@@ -68,12 +68,14 @@ export const sendNewOrder = (data) => {
     }
     var totalData = parseInt(fsum)+parseInt(dsum)
 
-    // const tables = globalFetchTables().then(res => {return res.reduce()})
+    console.log(data.mdata, 'LAST KOPEK')
+
     const lastmil = moment().valueOf()
     const shortId = moment().format('hm')+JSON.stringify(lastmil).slice(-2)
     const order = {
         drink:data.ddata,
         food:data.fdata,
+        type:'app',
         orderId:data.tdata.table+shortId,
         status:'pending',
         submitted:moment().format('DD/MM/YYYY'),

@@ -9,6 +9,7 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { NavLink as RouterNavLink, useHistory, Link } from "react-router-dom";
 import MainOrder from "../components/MainOrder";
 import SumCheck from "../components/SummaryCheck";
+import { ordersFetch } from "../utils/fetch";
 
 import { Input } from "reactstrap";
 
@@ -39,6 +40,7 @@ const Thanks = (data) => {
         data.setCart([])
       }
     });
+
 
 
   }, [history]);
