@@ -30,6 +30,7 @@ const MainOrder = (from) => {
       dataArray.map(item => {
 
         return (
+          <>{item.avail ?         
           <Link
             tag={RouterNavLink}
             to={{
@@ -64,6 +65,10 @@ const MainOrder = (from) => {
               </div>
             </div>
           </Link>
+          : ''}
+    
+          </>
+        
         )
       })
   }

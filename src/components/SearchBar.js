@@ -28,7 +28,8 @@ const SearchBar = (from) => {
 
       if (search.length > 0) {
         console.log(list[i].name.toUpperCase().indexOf(search.toUpperCase()),'context test')
-        if (list[i].name.toUpperCase().indexOf(search.toUpperCase()) > -1 ) {
+        
+        if (list[i].name.toUpperCase().indexOf(search.toUpperCase()) > -1 && list[i].avail) {
           newList.push(list[i])
         } 
       }
