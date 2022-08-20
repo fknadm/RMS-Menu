@@ -38,19 +38,25 @@ const Menu = (data) => {
     }
   
     if (location.state.context === 'Appetizer') {
-      var dataContext = items.filter(x => x.category === "Appetizer")
+      var dataContext = items.filter(x => x.category === "Appetizer" && x.avail)
     }
   
     if (location.state.context === 'Pasta') {
-      var dataContext = items.filter(x => x.category === "Pasta")
+      var dataContext = items.filter(x => x.category === "Pasta" && x.avail)
     }
   
     if (location.state.context === 'Drinks') {
-      var dataContext = items.filter(x => x.category === "Drinks")
+      var dataContext = items.filter(x => x.category === "Drinks" && x.avail)
     }
   
     if (location.state.context === 'Sandwiches') {
-      var dataContext = items.filter(x => x.category === "Sandwiches")
+      var dataContext = items.filter(x => x.category === "Sandwiches" && x.avail)
+    }
+    if (location.state.context === 'Mains') {
+      var dataContext = items.filter(x => x.category === "Sandwiches" || x.category === "Grill" || x.category === "Mains" && x.avail)
+    }
+    if (location.state.context === 'Grill') {
+      var dataContext = items.filter(x => x.category === "Grill" && x.avail)
     }
   }
   else {

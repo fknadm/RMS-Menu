@@ -67,6 +67,36 @@ const FoodCarousell = (from) => {
               tag={RouterNavLink}
               to={{
                 pathname:'/menu',
+                state:{context:'Mains'}
+              }}
+              exact
+              activeClassName="router-picked"
+            >
+        <div className="carou-tile">
+          <div style={{background:`url(https://res.cloudinary.com/xero-prime/image/upload/v1660211624/EXP-02_ytroiq.jpg)`}} className="img-container unselected-item cover">
+          </div>
+          <p className="carou-title">Mains</p>
+        </div>
+        </Link>
+        <Link
+              tag={RouterNavLink}
+              to={{
+                pathname:'/menu',
+                state:{context:'Grill'}
+              }}
+              exact
+              activeClassName="router-picked"
+            >
+        <div className="carou-tile">
+          <div style={{background:`url(https://res.cloudinary.com/xero-prime/image/upload/v1660211641/EXP-08_wrujdb.jpg)`}} className="img-container unselected-item cover">
+          </div>
+          <p className="carou-title">Grill</p>
+        </div>
+        </Link>
+        <Link
+              tag={RouterNavLink}
+              to={{
+                pathname:'/menu',
                 state:{context:'Pasta'}
               }}
               exact
@@ -104,8 +134,7 @@ const FoodCarousell = (from) => {
               activeClassName="router-picked"
             >
         <div className="carou-tile">
-          <div className="img-container unselected-item">
-            <img className="carou-icon" src={defimg} />
+          <div style={{background:'url(https://images.food52.com/hJVqzsk-IVC5ClmsvJXuCU-Dd7A=/1200x1200/52a45c81-a0c3-4d2e-953c-51baed112e91--cali_h.jpg)'}} className="img-container unselected-item cover">
           </div>
           <p className="carou-title">Sandwiches</p>
         </div>
