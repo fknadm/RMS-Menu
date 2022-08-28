@@ -935,6 +935,7 @@ a {
   overflow: auto;
   height: 100%;
   width: 100%;
+  min-height: 110vh;
 }
 
 .sec-col-single {

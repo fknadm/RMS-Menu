@@ -34,7 +34,14 @@ const SingleOrder = (from) => {
   });
 
   const conData = {
+    main: true,
     title: 'Add Ons',
+    focus: 'Appetizer'
+  }
+
+  const appData = {
+    main: false,
+    title: 'Additional Items',
     focus: 'Appetizer'
   }
 
@@ -115,7 +122,7 @@ const SingleOrder = (from) => {
             </div>
               : ''}
           </div>
-          {data.category !== 'Appetizer' ? <PopSec context={conData} data={gdata} /> : ''}
+          {data.category !== 'Appetizer' ? <PopSec context={conData} data={gdata} /> : data.category === 'Appetizer' ? <PopSec context={appData} data={gdata} />  : ''}
 
           <div className="btn-rows">
             <Input onChange={e => handleChange(e)} className="comment-box" type="text" placeholder="Comments" />

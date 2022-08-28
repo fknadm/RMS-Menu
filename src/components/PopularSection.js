@@ -12,8 +12,14 @@ import { NavLink as RouterNavLink, Link } from "react-router-dom";
 const PopSec = (from) => {
   console.log(from, 'here')
 
-  const loadList = from.data.filter(x => x.category === from.context.focus).slice(0,2)
-  console.log(loadList)
+  if (from.context.main) {
+    var loadList = from.data.filter(x => x.category === from.context.focus).slice(0,2)
+  }
+
+  else if (!from.context.main) {
+    var loadList = from.data.filter(x => x.category === from.context.focus && x.name === 'Garlic Bread')
+  }
+
 
   return (
     <>     

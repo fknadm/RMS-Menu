@@ -53,7 +53,7 @@ const Menu = (data) => {
       var dataContext = items.filter(x => x.category === "Sandwiches" && x.avail)
     }
     if (location.state.context === 'Mains') {
-      var dataContext = items.filter(x => x.category === "Sandwiches" || x.category === "Grill" || x.category === "Mains" && x.avail)
+      var dataContext = items.filter(x => ( x.category === "Sandwiches" || x.category === "Grill" || x.category === "Mains" ) && x.avail)
     }
     if (location.state.context === 'Grill') {
       var dataContext = items.filter(x => x.category === "Grill" && x.avail)
