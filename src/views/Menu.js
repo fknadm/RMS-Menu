@@ -42,7 +42,7 @@ const Menu = (data) => {
     }
   
     if (location.state.context === 'Pasta') {
-      var dataContext = items.filter(x => x.category === "Pasta" && x.avail)
+      var dataContext = items.filter(x => x.subCat === "Pasta" && x.avail)
     }
   
     if (location.state.context === 'Drinks') {
