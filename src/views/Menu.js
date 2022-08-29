@@ -34,7 +34,22 @@ const Menu = (data) => {
 
   if (location.state) {
     if (location.state.context === 'All Items') {
-      var dataContext = items
+
+      const priority = {
+        Appetizer: 10,
+        Mains: 9,
+        Grill:8,
+        Sandwiches:7,
+        Drinks:6,
+        OpenOrder:5,
+        Dessert:4,
+     };
+
+     const r = items.sort((a, b) => priority[b.category] - priority[a.category]).filter(x => x.avail);
+
+     console.log(r, 'ARRRRR')
+
+      var dataContext = r
     }
   
     if (location.state.context === 'Appetizer') {
