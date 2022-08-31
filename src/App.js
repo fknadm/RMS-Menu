@@ -23,6 +23,7 @@ import SingleOrder from "./views/SingleOrder";
 import OrdersCart from "./views/OrdersCart"
 import Thanks from "./views/Thanks"
 import CheckOrder from "./views/CheckOrder";
+import PreMenu from "./views/PreMenu";
 const qs = require('qs')
 
 initFontAwesome();
@@ -65,7 +66,7 @@ const App = () => {
             <Route path="/" exact render={(prop) => <Landing setForce={setForce} setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
             <Route path="/thanks" exact render={(prop) => <Thanks setMyorder={setMyorder} setOrders={setOrders} forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
             <Route path="/check" exact render={(prop) => <CheckOrder myOrder={myOrder} forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
-
+            <Route path="/premenu" exact render={(prop) => <PreMenu setForce={setForce} setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
           </Switch>
         </Container>
    {forceHide ? '' : <NavBarInt  data={cart} prop={mainState} /> }

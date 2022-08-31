@@ -594,6 +594,19 @@ body {
     flex-direction: column;
 }
 
+
+.bg-land-2 {
+  opacity: 1;
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+
+
+
 .bg-land2 {
   opacity: 1;
   display: flex;
@@ -637,7 +650,8 @@ margin-bottom: 90px;
 
 
 .landing-logo {
-  max-width: 180px
+  max-width: 180px;
+  margin-bottom: 10px;
 }
 
 .landing-title {
@@ -1251,6 +1265,22 @@ label {
   border: navajowhite;
   margin-top: 20px;
   font-size: 14px;
+}
+
+.clsp {
+  padding: 10px;
+  background-color: #f6f6f6;
+  margin: 5px;
+}
+
+.clsp-n {
+  border-top: 1px solid black;
+}
+
+.item-men {
+  display: flex;
+  padding: 5px;
+  margin-bottom: 5px;
 }
 
 

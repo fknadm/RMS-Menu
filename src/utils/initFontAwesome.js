@@ -1,5 +1,5 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faLink, faPowerOff, faUser, faChevronCircleLeft, faEdit, faHome, faHamburger, faShoppingCart, faPlusCircle,faMinusCircle , faThumbsUp, faStar,faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faLink, faPowerOff, faUser, faChevronCircleLeft, faEdit, faHome, faHamburger, faShoppingCart, faPlusCircle,faMinusCircle , faThumbsUp, faStar,faChevronLeft, faChevronUp, faChevronDown} from "@fortawesome/free-solid-svg-icons";
 
 function initFontAwesome() {
   library.add(faLink);
@@ -15,6 +15,10 @@ function initFontAwesome() {
   library.add(faThumbsUp)
   library.add(faStar)
   library.add(faChevronLeft)
+  library.add(faChevronUp)
+  library.add(faChevronDown)
+
+
 
 
 
