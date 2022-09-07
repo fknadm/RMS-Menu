@@ -69,7 +69,7 @@ const SingleOrder = (from) => {
     }
 
     else if (ice === 'hot') {
-      setIce('ice')
+      setIce('hot')
 
     }
 
@@ -110,15 +110,15 @@ const SingleOrder = (from) => {
             <div className="desc-left">
             <p>{data.desc}</p>
             </div>
-            {data.category === 'Drinks' ? <div className="toggRow">
-              <p>Ice</p>
-            
-              <label className="switch">
-                <Input type="checkbox" onClick={() => handleAdd('hot')}></Input>
-                <span className="slider round"></span>
-              </label>
+            {data.category === 'Drinks' && data.options !== 'none' ? <div className="toggRow">   
 
-              <p>Hot</p>
+                <select value={ice} onChange={(e) => setIce(e.target.value)}>
+                  {data.options.map(x => {
+                    return(
+                      <option value={x}>{x}</option>
+                    )
+                  })}
+                </select>
             </div>
               : ''}
           </div>
