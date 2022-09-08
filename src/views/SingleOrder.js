@@ -110,7 +110,7 @@ const SingleOrder = (from) => {
             <div className="desc-left">
             <p>{data.desc}</p>
             </div>
-            {data.category === 'Drinks' && data.options !== 'none' ? <div className="toggRow">   
+            {data.category === 'Drinks' && data.options && data.options !== 'none' ? <div className="toggRow">   
 
                 <select value={ice} onChange={(e) => setIce(e.target.value)}>
                   {data.options.map(x => {
