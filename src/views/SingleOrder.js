@@ -34,7 +34,7 @@ const SingleOrder = (from) => {
   });
 
   const conData = {
-    main: true,
+    main: 'Pop',
     title: 'Add Ons',
     focus: 'Appetizer'
   }

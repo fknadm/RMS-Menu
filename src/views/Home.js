@@ -41,7 +41,6 @@ const Home = (something) => {
   const queryObject = qs.parse(location.search, { ignoreQueryPrefix: true }).t
 
   useEffect(() => {
-
     ordersFetch().then(res =>{
 
       const pending = res.filter(x => {return x.status === 'pending' && x.table_no === something.tableData})
@@ -83,7 +82,8 @@ const Home = (something) => {
 
   const conData = {
     title:'Popular',
-    focus:'Pasta'
+    focus:'Mains',
+    main:'Pop'
   }
 
 

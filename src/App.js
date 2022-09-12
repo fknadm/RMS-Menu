@@ -49,11 +49,11 @@ const App = () => {
       setMyorder(pending)
      }
 
+
  
 
   },[table]);
 
-  
   return (
     <Router history={history}>
       <div id="app" className="">

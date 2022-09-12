@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ Fragment, useState, useEffect }from "react";
 import "../App.css"
 import { Container, Row, Col } from "reactstrap";
 import { useHistory } from 'react-router-dom';
@@ -10,15 +10,23 @@ import { NavLink as RouterNavLink, Link } from "react-router-dom";
 
 // const history= useHistory();
 const PopSec = (from) => {
+
+  const [menuState,setMenu] = useState([])
+
+  useEffect(() => {
+    if (from.context.main === 'Pop') {
+      var toSet = from.data.filter(x => x.category === from.context.focus).slice(0,2)
+      setMenu(toSet)
+    }
+  
+    else if (!from.context.main) {
+      var toSet = from.data.filter(x => x.category === from.context.focus && x.name === 'Garlic Bread')
+     setMenu(toSet)
+    }
+
+  }, [from.data]);
   console.log(from, 'here')
-
-  if (from.context.main) {
-    var loadList = from.data.filter(x => x.category === from.context.focus).slice(0,2)
-  }
-
-  else if (!from.context.main) {
-    var loadList = from.data.filter(x => x.category === from.context.focus && x.name === 'Garlic Bread')
-  }
+ 
 
 
   return (
@@ -26,7 +34,7 @@ const PopSec = (from) => {
     <h5 style={from.context.title === 'Add Ons' ? {} : {paddingLeft:'20px'}}>{from.context.title}</h5>
       <div style={from.context.title === 'Popular' ? { height: "350px" } : {}} className="hero-bar col-dir">
         <div className="row-2-grid">
-        {loadList.map(item => {
+        {menuState.map(item => {
           return (
             <Link
             style={{    width: '50%'}}
