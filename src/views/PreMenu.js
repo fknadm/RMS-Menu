@@ -49,9 +49,12 @@ const PreMenu = (data) => {
         </div>
         <div>
           <p><b>{y.name}</b></p>
+          <p>RM{y.price}</p>
+         
+
           <p style={{fontSize:'11px'}}>{y.desc}</p>
         </div>
-
+      
       </div>
     )
   })
@@ -64,6 +67,8 @@ const PreMenu = (data) => {
         </div>
         <div>
           <p><b>{y.name}</b></p>
+          <p>RM{y.price}</p>
+
           <p style={{fontSize:'11px'}}>{y.desc}</p>
         </div>
 
@@ -79,6 +84,8 @@ const PreMenu = (data) => {
         </div>
         <div>
           <p><b>{y.name}</b></p>
+          <p>RM{y.price}</p>
+
           <p style={{fontSize:'11px'}}>{y.desc}</p>
         </div>
 
@@ -95,6 +102,8 @@ const PreMenu = (data) => {
         </div>
         <div>
           <p><b>{y.name}</b></p>
+          <p>RM{y.price}</p>
+
           <p style={{fontSize:'11px'}}>{y.desc}</p>
         </div>
 
@@ -111,6 +120,8 @@ const PreMenu = (data) => {
         </div>
         <div>
           <p><b>{y.name}</b></p>
+          <p>RM{y.price}</p>
+
           <p style={{fontSize:'11px'}}>{y.desc}</p>
         </div>
 
