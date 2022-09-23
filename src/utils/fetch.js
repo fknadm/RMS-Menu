@@ -76,13 +76,13 @@ export const sendNewOrder = async (data) => {
         drink:data.ddata,
         food:data.fdata,
         type:'app',
-        orderId:data.tdata.table+shortId,
+        orderId:data.tdata.table+shortId+moment().format('MMDD'),
         status:'pending',
         submitted:moment().format('DD/MM/YYYY'),
         submitted_t:moment().format('HH:mm'),
         table_no:data.tdata.table,
         tprice: totalData,
-        txid:moment().format('hMs')+shortId,
+        txid:moment().format('hMs')+shortId+moment().format('MMDD'),
         end:'',
         masterTable:data.tdata.table
     }
