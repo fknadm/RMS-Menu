@@ -95,11 +95,11 @@ export const sendNewOrder = async (data) => {
           },
 
     })
-        .then(resp => {
-            if (resp.status === 200 || resp.status === 201) {
-                console.log('success')
-            }
-        }
+        // .then(resp => {
+        //     if (resp.status === 200 || resp.status === 201) {
+        //         console.log('success')
+        //     }
+        // }
            
-        )
+        // )
 }
