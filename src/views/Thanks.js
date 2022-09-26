@@ -4,6 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 import Hero from "../components/Hero";
 import NavBar from "../components/NavBar"
 import hlogo from "../assets/hlogo.png"
+import mlogo from "../assets/mainlog.png"
 import Loading from "../components/Loading";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { NavLink as RouterNavLink, useHistory, Link } from "react-router-dom";
@@ -103,6 +104,8 @@ const Thanks = (data) => {
   return (
     <div className="bg-land">
       <img className="landing-logo" src={hlogo} />
+      Powered By:
+      <img className="landing-logo" src={mlogo} />
       <div className="landing-inner">
         <h2 className="landing-title">Your order has been sent!</h2>
         <div className="btn-home">
