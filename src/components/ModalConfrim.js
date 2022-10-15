@@ -41,6 +41,23 @@ const ModalConfirm = (from) => {
 
   return (
       <>
+      {from.view === 'pic' ?
+          <>      
+          <div onClick={() => from.setView(false)} className="modalConfirm">
+          </div>
+          <div className="modalInner"> 
+              <div>
+                <img style={{maxHeight:'500px',maxWidth:'330px'}} className="" src={from.url} />
+              </div>
+              <div className="modalButtons" style={{width:'330px'}}>
+
+<button onClick={() => {document.body.style.overflow = 'auto';from.setView(false)}} className="btn-modal ready">Close</button>
+</div>
+           
+          </div>
+          </>
+      : 
+      <>      
       <div onClick={() => from.setPop(false)} className="modalConfirm">
       </div>
       <div className="modalInner">
@@ -55,6 +72,9 @@ const ModalConfirm = (from) => {
           <button onClick={() => {document.body.style.overflow = 'auto';from.setPop(false)}} className="btn-modal ready">Confirm</button>
         </div>
       </div>
+      </>
+      }
+
       </>
       
       

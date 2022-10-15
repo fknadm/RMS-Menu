@@ -20,6 +20,8 @@ const SingleOrder = (from) => {
   const [popVis, setPop] = useState(false)
   const [comms, setComms] = useState([])
   const [ice, setIce] = useState('ice')
+  const [view,setView] = useState(false)
+  const [thisPic,setThisPic] = useState([])
 
   const data = from.location.state.single
   const gdata = from.location.state.global
@@ -47,6 +49,17 @@ const SingleOrder = (from) => {
 
   const add = (s) => {
     cartAdd(s).then(res => { showPop(); from.setCart(res) })
+  }
+
+  const toggleView = (x) => {
+    setView(prevView => !prevView)
+    if (x.length > 0) {
+      setThisPic(x)
+    }
+
+    else {
+      setThisPic([])
+    }
   }
 
   const showPop = () => {
@@ -84,10 +97,12 @@ const SingleOrder = (from) => {
 
   return (
     <>
-      {popVis ? <ModalConfirm setPop={setPop} /> : ''}
+      {popVis ? <ModalConfirm view={'cfm'} setPop={setPop} /> : ''}
+      {view ? <ModalConfirm url={thisPic} view={'pic'}  setView={setView} /> : ''}
+      
       <div className="item-full-single">
         <FontAwesomeIcon size="2x" className="chev-back-white space-right absolute" onClick={() => history.goBack()} icon='chevron-left' />
-        <div style={{ background: `url(${data.img_url})` }} className="single-img-holder">
+        <div onClick={()=>toggleView(data.img_url)} style={{ background: `url(${data.img_url})` }} className="single-img-holder">
           {/* <img className="solo-img" src={data.img_url} /> */}
         </div>
         <div className="desc-card">
