@@ -15,12 +15,12 @@ const PopSec = (from) => {
 
   useEffect(() => {
     if (from.context.main === 'Pop') {
-      var toSet = from.data.filter(x => x.category === from.context.focus).slice(0,2)
+      var toSet = from.data.filter(x => x.category === from.context.focus && x.avail).slice(0,2)
       setMenu(toSet)
     }
   
     else if (!from.context.main) {
-      var toSet = from.data.filter(x => x.category === from.context.focus && x.name === 'Garlic Bread')
+      var toSet = from.data.filter(x => x.category === from.context.focus && x.name === 'Garlic Bread' && x.avail)
      setMenu(toSet)
     }
 
