@@ -76,6 +76,23 @@ const PreMenu = (data) => {
     )
   })
 
+  const lunchSet = data.prop.filter(x => x.category === 'LunchSet').map(y => {
+    return (
+      <div className="item-men" style={{ display: 'flex' }}>
+        <div>
+          <img style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
+        </div>
+        <div>
+          <p><b>{y.name}</b></p>
+          <p>RM{y.price}</p>
+
+          <p style={{fontSize:'11px'}}>{y.desc}</p>
+        </div>
+
+      </div>
+    )
+  })
+
   const pasta = data.prop.filter(x => x.subCat === 'Pasta').map(y => {
     return (
       <div className="item-men" style={{ display: 'flex' }}>
@@ -166,6 +183,16 @@ const PreMenu = (data) => {
             </div> 
             <div className="clsp-n" style={vis === 'mains' ? { display: 'flex', flexDirection: 'column' } : { display: 'none' }}>
               {mains}
+            </div>
+          </div>
+
+          <div className="clsp" onClick={() => handleVis('lunchSet')}>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+           <h5>Lunch Set</h5>
+          {vis === 'lunchSet'?  <FontAwesomeIcon icon="chevron-up" /> : <FontAwesomeIcon icon="chevron-down" />}
+            </div> 
+            <div className="clsp-n" style={vis === 'lunchSet' ? { display: 'flex', flexDirection: 'column' } : { display: 'none' }}>
+              {lunchSet}
             </div>
           </div>
 
