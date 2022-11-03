@@ -26,36 +26,51 @@ import CheckOrder from "./views/CheckOrder";
 import PreMenu from "./views/PreMenu";
 const qs = require('qs')
 
+firebase.initializeApp({
+  apiKey: "AIzaSyDsvfUROgM0PD0maGPEY55N1MdQ-24CqyU",
+  authDomain: "rms-deployment1.firebaseapp.com",
+  projectId: "rms-deployment1",
+  storageBucket: "rms-deployment1.appspot.com",
+  messagingSenderId: "480608866435",
+  appId: "1:480608866435:web:c93a1240826a1ffdcc4bb6",
+  measurementId: "G-KHNN9NEN8F"
+});
+
+const firestore = firebase.firestore()
+
+const messagesRef = firestore.collection('orders');
+const query = messagesRef.orderBy('submitted')
+
 initFontAwesome();
+
 const App = () => {
-  const sample = [ { "id": "9qO1Wmcdur3a7UQGoeE8", "chefrec": false, "img_url": "https://img.freepik.com/free-photo/homemade-tasty-bread-with-garlic-cheese-herbs-kitchen-table_1150-47119.jpg?t=st=1658374495~exp=1658375095~hmac=fcd1f1e1d53cf708cec0cf1f21ab9a4072b6eaa604c82f3f71769b59c45b7910&w=740", "desc": "Toasty, buttery, herby, covered in a dusting of salty parmesan cheese, piping hot and fresh out of the oven", "avail": true, "name": "Garlic Bread", "category": "Appetizer", "price": 20 } ]
   const [mainState, setMainState] = useState([]);
+  const [socketState,setSocket] = useState([])
   const [hide, setHide] = useState(false);
   const [table, setTable] = useState(0)
   const [cart, setCart] = useState([]);
   const [forceHide, setForce] = useState(false)
   const [orders, setOrders] = useState([])
   const [myOrder, setMyorder] = useState([])
-
-
-  console.log(table,cart,'tablecheck')
+  const [loadlist] = useCollectionData(query, { idField: 'id' });
 
   useEffect(() => {
+
     globalFetch().then(res => setMainState(res))
-    ordersFetch().then(res => {
-      const resFlat = res.flat(1)
-      setOrders(resFlat)
-    })
 
-    if (table > 0) {
-      const pending = orders.filter(x => {return x.status === 'pending' && x.table_no === table})
-      setMyorder(pending)
-     }
+    if (loadlist) {
+      console.log('succ')
+      if (table > 0) {
+        const pending = loadlist.filter(x => {return x.status === 'pending' && x.table_no === table})
+        setMyorder(pending)
+       }
+    }
 
+    if (!loadlist) {
+      console.log('fail')
+    }
 
- 
-
-  },[table,orders]);
+  },[table,loadlist]);
 
   return (
     <Router history={history}>
