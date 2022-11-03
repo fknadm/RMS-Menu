@@ -42,7 +42,10 @@ const App = () => {
 
   useEffect(() => {
     globalFetch().then(res => setMainState(res))
-    ordersFetch().then(res => setOrders(res))
+    ordersFetch().then(res => {
+      const resFlat = res.flat(1)
+      setOrders(resFlat)
+    })
 
     if (table > 0) {
       const pending = orders.filter(x => {return x.status === 'pending' && x.table_no === table})
@@ -52,7 +55,7 @@ const App = () => {
 
  
 
-  },[table]);
+  },[table,orders]);
 
   return (
     <Router history={history}>
