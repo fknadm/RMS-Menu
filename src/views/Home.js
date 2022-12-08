@@ -17,6 +17,7 @@ import "../App.css"
 import FoodCarousell from "../components/FoodCarousel";
 import PopSec from "../components/PopularSection";
 import SearchBar from "../components/SearchBar";
+import AdBanner from "../components/AdBanner";
 
 const root = document.getElementById('root').style
 
@@ -108,8 +109,10 @@ const Home = (something) => {
       : ''
     }
       <SearchBar data={something.prop}/>
+      <AdBanner banner={something.banner}/>
+
       <FoodCarousell data={something.prop}/>
-      <PromoBanner data={something.prop}/>
+      {/* <PromoBanner data={something.prop}/> */}
       <PopSec context={conData} data={something.prop} />
 
     </>

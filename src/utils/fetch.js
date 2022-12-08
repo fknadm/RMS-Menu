@@ -1,6 +1,15 @@
 import Moment from 'react-moment';
 import moment from 'moment';
 
+export const bannerFetch = async () => {
+    return fetch('https://adbanner-dkadb5fypa-uc.a.run.app/SlloQMWcIMs2RrcKMaaW', {
+        method: "GET"
+    })
+        .then(resp =>
+            resp.json()
+        )
+}
+
 export const globalFetch = async () => {
     return fetch('https://us-central1-rms-deployment1.cloudfunctions.net/mitems', {
         method: "GET"
@@ -11,7 +20,7 @@ export const globalFetch = async () => {
 }
 
 export const ordersFetch = async () => {
-    return fetch('https://us-central1-rms-deployment1.cloudfunctions.net/orders', {
+    return fetch('https://orders2-dkadb5fypa-uc.a.run.app/', {
         method: "GET"
     })
         .then(resp =>
