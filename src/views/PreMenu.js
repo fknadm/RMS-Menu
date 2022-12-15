@@ -185,7 +185,7 @@ const PreMenu = (data) => {
               {mains}
             </div>
           </div>
-
+{/* 
           <div className="clsp" onClick={() => handleVis('lunchSet')}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
            <h5>Lunch Set</h5>
@@ -194,7 +194,7 @@ const PreMenu = (data) => {
             <div className="clsp-n" style={vis === 'lunchSet' ? { display: 'flex', flexDirection: 'column' } : { display: 'none' }}>
               {lunchSet}
             </div>
-          </div>
+          </div> */}
 
           <div className="clsp" onClick={() => handleVis('pasta')}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
