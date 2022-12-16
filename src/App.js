@@ -78,7 +78,7 @@ const App = () => {
   return (
     <Router history={history}>
       <div id="app" className="">
-        <Container id="container" className="">
+        <Container id="container" className="" style={{marginBottom:'50%'}}>
           <Switch>
           <Route path="/item" render={(prop) => <SingleOrder setForce={setForce} setCart={setCart} prop={cart} tableData={table} {...prop} />} />
           <Route path="/cart" render={(prop) => <OrdersCart setOrders={setOrders} myOrder={myOrder} setForce={setForce} setCart={setCart} data ={mainState} tableData={table} setTable={setTable} prop={cart} {...prop} />} />

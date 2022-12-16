@@ -45,6 +45,10 @@
   Table {
     width: 100% !important
   }
+
+  #space{
+    /*margin-bottom: 200px;*/
+  }
 }
 
 .spinner {
@@ -1109,6 +1113,14 @@ font-size: 10px;
 .row-2-grid {
 display: flex;
 flex-direction: row;
+}
+
+#wrap {
+  flex-wrap: wrap;
+}
+
+#scroller {
+  overflow-x: scroll;
 }
 
 .card-promo-row {

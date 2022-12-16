@@ -6,7 +6,6 @@ import "../App.css"
 import { singlePut, remOrder } from "../utils/fetch";
 import Loading from "./Loading";
 
-
 import fnplate from "../assets/spag.png"
 
 import {
@@ -25,6 +24,7 @@ import {
 } from "reactstrap";
 
 import { useAuth0 } from "@auth0/auth0-react";
+import fallback from "../assets/noimg.jpg";
 
 const ModalConfirm = (from) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +47,7 @@ const ModalConfirm = (from) => {
           </div>
           <div className="modalInner"> 
               <div>
-                <img style={{maxHeight:'500px',maxWidth:'330px'}} className="" src={from.url} />
+                <img onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src = fallback}} style={{maxHeight:'500px',maxWidth:'330px'}} className="" src={from.url} />
               </div>
               <div className="modalButtons" style={{width:'330px'}}>
 

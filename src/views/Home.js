@@ -36,7 +36,7 @@ const Home = (something) => {
   const [show, setShow] = useState(false)
   const [focus, setFocus] = useState([])
   const [inputT,setInput] = useState([])
-  const [hide,setHide] = useState(false)
+  const [hide,setHide] = useState(something.tableData > 0 ? true : false)
 
 
   const queryObject = qs.parse(location.search, { ignoreQueryPrefix: true }).t
@@ -56,11 +56,11 @@ const Home = (something) => {
       something.setTable(queryObject)
     }
 
-    if (hide) {
+    if (!hide) {
       document.body.style.overflow='hidden'
     } 
 
-    else if (!hide) {
+    else if (hide) {
       document.body.style.overflow='scroll'
     }
 
@@ -68,7 +68,7 @@ const Home = (something) => {
 
 
 
-  }, []);
+  }, [hide]);
 
   let history = useHistory()
   const { user } = useAuth0();
@@ -82,11 +82,12 @@ const Home = (something) => {
   }
 
   const conData = {
-    title:'Popular',
+    title:'New Menu Items',
     focus:'Mains',
-    main:'Pop'
+    main:'Home'
   }
 
+  console.log(hide)
 
   return (
     <>

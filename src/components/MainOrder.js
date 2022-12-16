@@ -8,6 +8,7 @@ import moment from 'moment';
 import defimg from '../assets/def_img.png'
 import { UncontrolledCollapse, Collapse, Button, CardBody, Card } from 'reactstrap';
 import { cartDel } from "../utils/cartHandler";
+import fallback from "../assets/noimg.jpg"
 
 const MainOrder = (from) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,7 @@ const MainOrder = (from) => {
             <div className="item-container row-dir">
               <div className="group-left">
               <div className="item-img-container">
-                <img className="item-img" src={item.img_url} />
+                <img onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src = fallback}} className="item-img" src={item.img_url} />
               </div>
 
               <div className="text-mid">
