@@ -7,7 +7,6 @@ import defimg from "../assets/def_img.png"
 
 // const history= useHistory();
 const AdBanner = (from) => {
-  console.log(from)
 
   return (
     <div className="hero-bar col-dir">

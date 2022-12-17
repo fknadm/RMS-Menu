@@ -37,7 +37,6 @@ const ModalConfirm = (from) => {
     document.body.style.overflow = 'hidden'
   },[]);
 
-  console.log(from.data, 'here')
 
   return (
       <>

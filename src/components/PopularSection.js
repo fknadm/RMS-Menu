@@ -32,14 +32,13 @@ const PopSec = (from) => {
     }
 
   }, [from.data]);
-  console.log(from, 'here')
- 
+
 
 
   return (
     <>     
     <h5 style={from.context.title === 'Add Ons' ? {} : {paddingLeft:'20px'}}>{from.context.title}</h5>
-      <div id="space" style={from.context.title === 'Popular' ? { marginBottom:"150px" } : {}} className="hero-bar col-dir">
+      <div id="space" style={from.context.main === 'Home' ? { marginBottom:"150px" } : {}} className="hero-bar col-dir">
         <div id={from.context.main === 'Home' ? 'wrap' : 'scroller'} className="row-2-grid">
         {menuState.map(item => {
           return (

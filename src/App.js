@@ -78,7 +78,7 @@ const App = () => {
   return (
     <Router history={history}>
       <div id="app" className="">
-        <Container id="container" className="" style={{marginBottom:'50%'}}>
+        <Container id="container" className="" >
           <Switch>
           <Route path="/item" render={(prop) => <SingleOrder setForce={setForce} setCart={setCart} prop={cart} tableData={table} {...prop} />} />
           <Route path="/cart" render={(prop) => <OrdersCart setOrders={setOrders} myOrder={myOrder} setForce={setForce} setCart={setCart} data ={mainState} tableData={table} setTable={setTable} prop={cart} {...prop} />} />
@@ -87,7 +87,7 @@ const App = () => {
             <Route path="/" exact render={(prop) => <Landing setForce={setForce} setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
             <Route path="/thanks" exact render={(prop) => <Thanks setMyorder={setMyorder} setOrders={setOrders} forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
             <Route path="/check" exact render={(prop) => <CheckOrder myOrder={myOrder} forceHide={forceHide} data={mainState} setForce={setForce} setCart={setCart} cart={cart} setHide={setHide} setTable={setTable} prop={mainState} tableData={table} {...prop} />} />
-            <Route path="/premenu" exact render={(prop) => <PreMenu setForce={setForce} setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
+            <Route  path="/premenu" exact render={(prop) => <PreMenu setForce={setForce} setHide={setHide} setTable={setTable} prop={mainState} {...prop} />} />
           </Switch>
         </Container>
    {forceHide ? '' : <NavBarInt  data={cart} prop={mainState} /> }

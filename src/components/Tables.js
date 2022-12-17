@@ -43,14 +43,12 @@ const Tables = (from) => {
     page:"cashier"
   }
 
-  console.log(from.data, 'app>kitchen>tables')
 
   const dataArray = from.data
     var tablelist = [];
     var tableOrders =[];
     dataArray.map(item => {tableOrders.push({table:item.table_no,istat:item.status})})
 
-    console.log(tableOrders,'look here')
 
     const checker = (c) => {
       const test = tableOrders.find(x => x.table === c)
@@ -86,8 +84,6 @@ const Tables = (from) => {
       }
 
     }
-
-    console.log(selTable, 'seltable')
 
     const showOrder = () => {
       return (

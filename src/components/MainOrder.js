@@ -91,7 +91,6 @@ const MainOrder = (from) => {
       for (let i = 0; i < mname.length; i++) {
         var foodArrays = food.filter(x => x.name === mname[i])[0]
         var foodArrayQty = food.filter(x => x.name === mname[i]).length
-        console.log(foodArrays, 'FOOD RAW ARRAY AFTER FILTER')
 
         //NEED TO FIX LOGIC FOR PUSH
 
@@ -112,8 +111,6 @@ const MainOrder = (from) => {
 
       }
 
-      console.log('array food:',multipleOrdersFood)
-      console.log('data:',multiFood)
 
     }
 
@@ -121,7 +118,6 @@ const MainOrder = (from) => {
       for (let i = 0; i < mname.length; i++) {
         var drinkArrays = drinks.filter(x => x.name === mname[i])[0]
         var drinkArrayQty = drinks.filter(x => x.name === mname[i]).length
-        console.log(drinkArrays, 'DRINK RAW ARRAY AFTER FILTER')
 
         //NEED TO FIX LOGIC FOR PUSH
 
@@ -141,8 +137,7 @@ const MainOrder = (from) => {
         var multiDrink = multipleOrdersDrink.map(x => x.entry)
         var multiDrinkData = multiDrink.map(x => x.data)
       }
-      console.log('array drink:',multipleOrdersDrink)
-      console.log('data:',multiDrink)
+
 
     }
 
@@ -150,7 +145,6 @@ const MainOrder = (from) => {
     if (multiFood){
 
       var foodItems = multiFood.map((item,i) => {
-        console.log(item, 'CHECKHERE')
         return (
   
           <div style={{  borderBottom:"1px solid #424242 !important" }}>
@@ -308,7 +302,6 @@ const MainOrder = (from) => {
       for (let i = 0; i < mname.length; i++) {
         var foodArrays = food.filter(x => x.name === mname[i])[0]
         var foodArrayQty = food.filter(x => x.name === mname[i]).length
-        console.log(foodArrays, 'FOOD RAW ARRAY AFTER FILTER')
 
         //NEED TO FIX LOGIC FOR PUSH
 
@@ -329,8 +322,7 @@ const MainOrder = (from) => {
 
       }
 
-      console.log('array food:',multipleOrdersFood)
-      console.log('data:',multiFood)
+
 
     }
 
@@ -338,7 +330,6 @@ const MainOrder = (from) => {
       for (let i = 0; i < mname.length; i++) {
         var drinkArrays = drinks.filter(x => x.name === mname[i])[0]
         var drinkArrayQty = drinks.filter(x => x.name === mname[i]).length
-        console.log(drinkArrays, 'DRINK RAW ARRAY AFTER FILTER')
 
         //NEED TO FIX LOGIC FOR PUSH
 
@@ -358,8 +349,7 @@ const MainOrder = (from) => {
         var multiDrink = multipleOrdersDrink.map(x => x.entry)
         var multiDrinkData = multiDrink.map(x => x.data)
       }
-      console.log('array drink:',multipleOrdersDrink)
-      console.log('data:',multiDrink)
+
 
     }
 
@@ -367,7 +357,6 @@ const MainOrder = (from) => {
     if (multiFood){
 
       var foodItems = multiFood.map((item,i) => {
-        console.log(item, 'CHECKHERE')
         return (
   
           <div style={{  borderBottom:"1px solid #424242 !important" }}>

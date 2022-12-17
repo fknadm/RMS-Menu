@@ -29,7 +29,6 @@ const Home = (something) => {
   root.flexDirection = "column"
   root.justifyContent = "flex-start"
   root.alignItems = "flex-start"
-  console.log(something.prop, 'app>Home')
   let location = useLocation()
 
   const [dataState, setDataState] = useState([]);
@@ -87,7 +86,6 @@ const Home = (something) => {
     main:'Home'
   }
 
-  console.log(hide)
 
   return (
     <>

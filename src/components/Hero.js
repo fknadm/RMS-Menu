@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Hero = (from) => {
   
-console.log(from)
 
 const history = useHistory();
 

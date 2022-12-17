@@ -8,6 +8,7 @@ import Loading from "../components/Loading";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { NavLink as RouterNavLink, useHistory, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import fallback from "../assets/noimg.jpg"
 
 import { Input } from "reactstrap";
 
@@ -45,7 +46,7 @@ const PreMenu = (data) => {
     return (
       <div className="item-men" style={{ display: 'flex' }}>
         <div>
-          <img style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
+          <img style={{ maxWidth: "50px",paddingRight:'5px' }} onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src = fallback}} src={y.img_url} />
         </div>
         <div>
           <p><b>{y.name}</b></p>
@@ -63,7 +64,7 @@ const PreMenu = (data) => {
     return (
       <div className="item-men" style={{ display: 'flex' }}>
         <div>
-          <img style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
+          <img onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src = fallback}} style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
         </div>
         <div>
           <p><b>{y.name}</b></p>
@@ -80,7 +81,7 @@ const PreMenu = (data) => {
     return (
       <div className="item-men" style={{ display: 'flex' }}>
         <div>
-          <img style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
+          <img onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src = fallback}} style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
         </div>
         <div>
           <p><b>{y.name}</b></p>
@@ -97,7 +98,7 @@ const PreMenu = (data) => {
     return (
       <div className="item-men" style={{ display: 'flex' }}>
         <div>
-          <img style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
+          <img onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src = fallback}} style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
         </div>
         <div>
           <p><b>{y.name}</b></p>
@@ -115,7 +116,7 @@ const PreMenu = (data) => {
     return (
       <div className="item-men" style={{ display: 'flex' }}>
         <div>
-          <img style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
+          <img onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src = fallback}} style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
         </div>
         <div>
           <p><b>{y.name}</b></p>
@@ -133,7 +134,7 @@ const PreMenu = (data) => {
     return (
       <div className="item-men" style={{ display: 'flex' }}>
         <div>
-          <img style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
+          <img onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src = fallback}} style={{ maxWidth: "50px",paddingRight:'5px' }} src={y.img_url} />
         </div>
         <div>
           <p><b>{y.name}</b></p>
@@ -160,7 +161,7 @@ const PreMenu = (data) => {
 
 
   return (
-    <div className="bg-land-2">
+    <div  className="bg-land-2">
       <img className="landing-logo" src={hlogo} />
       <div className="landing-inner" style={{ width: '100%',marginBottom:'15px' }}>
         <div style={{marginBottom:'15px'}}>

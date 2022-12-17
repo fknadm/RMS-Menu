@@ -12,23 +12,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const SearchBar = (from) => {
   const [search,setSearch] = useState('search')
 
-  console.log(from)
 
   const list = from.data
 
   const handleSearch = (ev) => {
     setSearch(ev.target.value)
   }
-  console.log(search)
   var newList = []
 
   const loadSug = () => {
     for (let i=0; i < list.length; i++) {
-      
-
       if (search.length > 0) {
-        console.log(list[i].name.toUpperCase().indexOf(search.toUpperCase()),'context test')
-        
         if (list[i].name.toUpperCase().indexOf(search.toUpperCase()) > -1 && list[i].avail) {
           newList.push(list[i])
         } 

@@ -9,7 +9,6 @@ import { ordersFetch, sendNewOrder } from "../utils/fetch";
 const SumCheck = (from) => {
   const [warning,setWarning] = useState(false)
 
-  console.log(from)
   const history = useHistory();
 
   const data = from.data
@@ -24,8 +23,6 @@ const SumCheck = (from) => {
     return { total: tval.toFixed(2), tvalue: calc.toFixed(2) }
 
   }
-
-  console.log(calcTax(bTax, taxSet))
 
   const navTo = () => {
     history.push("/thanks");

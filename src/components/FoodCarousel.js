@@ -25,7 +25,6 @@ import {
 
 // const history= useHistory();
 const FoodCarousell = (from) => {
-  console.log(from)
 
   return (
     <div style={
